@@ -1,0 +1,170 @@
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #000;
+    margin-left: 5px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    background-color: rgb(147, 116, 241);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    color: grey;
+}
+h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.container {
+    width: 1200px;
+    margin: 10px auto;
+    background-color:#fff;
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+
+.navbar {
+    padding: 50px 50px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+}
+.logo {
+    width: 150px;
+}
+.navbar > p {
+    color: lightgray;
+}
+.navbar > p > span, .navbar > i {
+    color: rgb(147, 116, 241);
+    font-weight: 700;
+}
+.navbar > p > i, .navbar > p > span > i  {
+    vertical-align: middle;
+    margin: 0 15px;
+}
+
+.info {
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* MAIN SECTION LEFT */
+.left {
+    flex-basis: calc(50% - 50px);
+    background-color: rgb(231, 228, 228);
+    border: 1px solid grey;
+    padding: 25px;
+}
+input, select {
+    margin: 10px 10px 10px 0;
+    width: 85%;
+    padding: 10px;
+    display: block;
+    color: rgb(147, 116, 241);
+}
+label {
+    display: inline-block;
+    width: 48%;
+}
+select {
+    width: 95%;
+}
+
+label[id="email"], label[id="tel"], label[id="address"]{
+   width: 100%;
+}
+input[type="email"], input[type="tel"], input[type="address"]{
+    width: 90%;
+ }
+
+
+/* MAIN SECTION  RIGHT */
+.right {
+    flex-basis: calc(50% - 50px);
+    height: 100%;
+}
+.delivery {
+    background-color: rgb(231, 228, 228);
+    border: 1px solid grey;
+    padding: 25px;
+    /* height: 50%; */
+}
+.delivery > label {
+    width: 100%;
+}
+
+.delivery-info  {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.btn {
+    flex-basis: 50%;
+    margin: 15px;
+    padding: 25px;
+    border: 1px solid grey;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+.wht {
+    color: rgb(147, 116, 241);
+}
+.ppl {
+    background-color: rgb(147, 116, 241);
+    color: white;
+}
+
+.btn > span {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.delivery > p {
+    margin: 0 auto;
+}
+.delivery > p > span {
+    font-weight: 700;
+}
+
+.checkbox {
+    margin: 20px 0;
+}
+.checkbox > label > input {
+    display: inline-block;
+    width: 10px;
+    margin: 10px;
+}
+
+
+.btn-sbmt {
+    margin-top: 10px;
+    padding: 30px 0;
+    background-color: rgb(147, 116, 241);
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}

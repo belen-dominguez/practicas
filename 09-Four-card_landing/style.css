@@ -1,0 +1,145 @@
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #000;
+    margin-left: 5px;
+}
+
+/* --------------------------- */
+
+/* Base */
+:root {
+    --rojo: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --naranja:hsl(34, 97%, 64%);
+    --azul: hsl(212, 86%, 64%);
+    --azulOscuro: hsl(234, 12%, 34%);
+    --gris: hsl(229, 6%, 66%);
+    --gris-claro: hsl(0, 0%, 98%);
+}
+body {
+    font-family: 'Poppins', sans-serif; 
+    font-size: 15px;
+}
+
+h1, h2, p {
+    color: var(--gris);
+}
+
+h1 {
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+/* Generales */
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 50px;
+   text-align: center;
+   background-color: var(--gris-claro);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Titulos  */
+
+.strong {
+    font-weight: 700;
+    color: var(--azulOscuro);
+    margin-top: 0;
+}
+
+.container > p {
+    width: 50%;
+    margin: 20px auto;
+    font-weight: 600;
+}
+
+
+/* Boxes */
+
+
+.box-container {
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, .5);
+    text-align: left;
+}
+.box-container.doble {
+    box-shadow: none;
+    width: 35%;
+}
+.box-container__up, .box-container__down {
+    border-radius: 10px;
+    box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, .5);
+    margin: 10px;
+    padding: 20px;
+}
+
+.box-container h2, .box-container__up h2, .box-container__down h2 {
+    color: var(--azulOscuro);
+    font-size: 20px;
+}
+
+.box-container p, .box-container__up p, .box-container__down p {
+    font-size: 13px;
+    margin-right: 40px;
+}
+.box-container__up {
+    margin-bottom: 30px;
+}
+
+.br-lb {
+    border-top: 4px solid var(--cyan);
+}
+.br-b {
+    border-top: 4px solid var(--azul);
+}
+.br-r {
+    border-top: 4px solid var(--rojo);
+}
+.br-y {
+    border-top: 4px solid var(--naranja);
+}
+
+.box-img {
+    margin-top: 30px;
+    margin-right: 10px;
+    text-align: right;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+    .flex {
+        flex-direction: column;
+    }
+    .container > p, .box-container {
+        width: auto;
+    }
+    .box-container.doble {
+        width: 100%;
+    }
+}

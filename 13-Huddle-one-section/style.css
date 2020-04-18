@@ -1,0 +1,125 @@
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    padding: 20px;
+    color: #fff;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+/* --------------*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: hsl(257, 40%, 49%) url(./images/bg-mobile.svg);
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif; 
+    /* font-weight: 400; */
+
+}
+img {
+    max-width: 100%;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 125px;
+    padding: 2rem 2rem 4rem;
+    margin: 0;
+}
+
+.main {
+    padding-bottom: 4rem;
+}
+.main-img {
+    padding-bottom: 3rem;
+}
+.main-description {
+    color: #fff;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: hsl(257, 40%, 49%);
+    font-size: 13px;
+    background-color: #fff;
+    padding: .7rem 5rem;
+    box-shadow: 0 5px 7px 3px  rgba(36, 9, 9, .5);
+    border-radius: 20px;
+}
+
+
+footer {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.social a i {
+    color: #fff;
+    padding: .7rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+@media screen and (min-width: 480px) {
+    body {
+        background-image: url(./images/bg-desktop.svg);
+        background-position: initial;
+        background-size: auto;
+    }
+    .container {
+        width: 90%;
+    }
+    .logo {
+        margin: 0 auto;
+    }
+    .logo > img {
+        width: 15%; 
+    }
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 0;
+    }
+    .main-img {
+        width: 60%;
+    }
+    .main-description {
+        width: 40%;
+        text-align: left;
+        padding-left: 4rem;
+    }
+    .main-description h1 {
+        font-size: 40px;
+    }
+    .main-description a {
+        font-size: 18px;
+        padding: 1rem 4rem;
+        border-radius: 30px;
+    }
+    footer {
+        text-align: right;
+        padding-bottom: 0;
+    }
+}

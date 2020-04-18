@@ -1,0 +1,119 @@
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #fff;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+
+/* ------------------ */
+/* Base */
+:root {
+    --celeste: hsl(179, 62%, 43%);
+    --celeste2: hsl(179, 72%, 47%);
+    --verde-claro: hsl(71, 73%, 54%);
+    --gris-claro: hsl(204, 43%, 93%);
+    --gris: hsl(218, 22%, 67%);
+}
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    width: 45%;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* border: 1px solid grey; */
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, .5);
+}
+
+.container-up {
+    padding: 2rem;
+}
+
+.container-up h1 {
+    color: var(--celeste);
+}
+.container-up h2 {
+    color: var(--verde-claro);
+}
+
+.container-up p {
+    color: var(--gris);
+
+}
+
+.container-down {
+    display: flex;
+    width: 100%;
+}
+.container-down_left {
+    flex: 1 1 50%;
+    background-color: var(--celeste);
+    border-bottom-left-radius: 10px;
+    color: #fff;
+    padding: 2rem 2rem;
+    width: 100%;
+}
+.left-inside {
+    margin: 0 auto;
+    width: 90%;
+}
+.left-inside h1 {
+    margin-bottom: 7px;
+}
+.left-inside h1 span {
+    font-size: 16px;
+    color: rgba(241, 235, 235, 0.637);
+    vertical-align: middle;
+}
+.left-inside p {
+    margin: 0 0 15px;
+}
+.btn {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--verde-claro);
+    /* margin: 10px; */
+    padding: .7rem 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px 3px rgba(0, 0, 0, .5);
+    text-align: center;
+}
+
+.container-down_right {
+    flex: 1 1 50%;
+    background-color: var(--celeste2);
+    border-bottom-right-radius: 10px;
+    color: #fff;
+    padding: 3rem 2rem;
+}
+.container-down_right h3 {
+    margin-top: 0;
+}
+.container-down_right ul {
+    margin: 0;
+    padding: 0;
+}
+.container-down_right ul li {
+    list-style: none;
+    color: rgba(241, 235, 235, 0.637);
+    font-size: 16px;
+    line-height: 20px;
+}
+

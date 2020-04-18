@@ -1,0 +1,24 @@
+@import "./style.css";
+
+body {
+    background-color: hsl(0, 0%, 100%);
+}
+
+
+h2, .header-right > p {
+    color: #000;
+}
+
+.soc, .main {
+    background-color: hsl(231, 9%, 85%);
+}
+.soc:hover, .main:hover {
+    background-color: hsl(228, 4%, 73%);
+}
+
+.bgd {
+    background-color:  hsla(231, 9%, 85%, .4);
+}
+.main > h1, .soc-detail > .nr {
+    color: #000;
+}

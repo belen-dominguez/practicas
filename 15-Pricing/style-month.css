@@ -1,0 +1,11 @@
+@import "./style.css";
+
+
+.switch-anual {
+    color: var(--gris);
+    border: none;
+}
+.switch-month {
+    color: hsl(228, 8%, 24%);
+    border-bottom: 2px solid hsl(228, 8%, 24%);
+}
