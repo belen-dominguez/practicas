@@ -157,6 +157,7 @@ header {
 .social {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-between;
     height: 30%;
 }
@@ -219,7 +220,7 @@ header {
         height: auto;
         padding: 0 1rem;
     }
-    }
+    
     .social {
         flex-direction: column;
         flex-wrap: nowrap; 
