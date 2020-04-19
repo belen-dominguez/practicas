@@ -107,7 +107,9 @@ header {
     margin: 0 auto;
 }
 /* Main Nav */
-
+.menu-img {
+    display: none;
+}
 .mainNav {
     padding: 2rem  3rem;
 }
@@ -300,4 +302,65 @@ header {
 .cta div p {
     font-size: 20px;
     margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 480px) {
+    .menu {
+        display: none;
+    }
+    .menu-img {
+        display: inline-block;
+    }
+    .logo a, .logo a span {
+        font-size: 30px;
+    }
+    .hero {
+        padding: 0;
+    }
+    .how-links {
+        width: 80%;
+        flex-wrap: wrap;
+    }
+    .how-item {
+        margin-top: 1rem;
+    }
+    .support-content {
+        flex-direction: column;
+    }
+    .support-item {
+        text-align: center;
+        width: auto;
+    }
+    .features-content {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+    .features-left, .features-right {
+        width: auto;
+        text-align: center;
+        margin: 0;
+    }
+    .service {
+        flex-direction: column;
+    }
+    .service-left, .service-right {
+        width: auto;
+    }
+    .service-right {
+        padding: 0 1erm;
+    }
+    .service-right h2 {
+        font-size: 35px;
+    }
+    .about {
+        width: auto; 
+    }
+    .about-intro h2 {
+        font-size: 32px;
+    }
+    .cta div {
+        width: auto;
+        padding: 0 1rem;
+    }
+    
 }
