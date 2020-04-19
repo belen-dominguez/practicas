@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mix Landing</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/a9410861d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,79 +14,95 @@
     <a href="https://github.com/belen-dominguez/practicas/tree/master/18-Usance-landing" target="_blank"><span title="Ingresar a Repo"> <i class="fab fa-github"></i></span></a>
 </div>
 
-<header class="container">
-    <div class="main-nav">
-        <a href="index.html">Mix</a>
-        <span class=" fa fa-bars"></span>
+<header >
+    <div class="main-nav flex container">
+        <a class="logo" href="index.html">Mix</a>
+        <span class=" fa fa-bars menu-img"></span>
+        <div class="menu flex">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Services</a>
+            <a href="">Works</a>
+            <a href="">Blog</a>
+            <a href="">Contact</a>
+        </div>
     </div><!-- end menu-->
     <div class="hero">
-        <div class="hero-content container">
+        <div class="hero-content flex ">
             <h1>Hello, I’m <span>Christopher </span> </h1>
-            <h3 class="borderpink">UI/UX Designer</h3>
-            <a href="" class="btn btn-pink">My work</a>
-            <a href="" class="btn btn-white">Hire me</a>
+            <h3 class="borderpink">UI/UX Designer</h3><br>
+            <div class="hero-btns">
+                <a href="" class="btn btn-pink">My work</a>
+                <a href="" class="btn btn-white">Hire me</a>
+            </div>
         </div>
     </div><!-- end hero-->
 </header><!-- End Header-->
 
 <section class="about container">
     <h2 class="borderpink">About Me</h2>
-    <div class="about-left">
-        <img src="./img/about.jpg" alt="">
-    </div>
-    <div class="about-left">
-        <h3>Why hire me for your next project?</h3>
-        <p>I love to work in User Experience & User Interface designing. Because I love to solve the design problem and find easy and better solutions to solve it. I always try my best to make good user interface with the best user experience. I have been working as a Visual designer from.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum, facere qui impedit dolor doloribus quis reiciendis ullam repellendus.</p>
-        <a href="" class="btn btn-white">Download CV</a>
+    <div class="about-content flex">
+        <div class="about-left">
+            <img src="./img/about.jpg" alt="">
+        </div>
+        <div class="about-right">
+            <h3>Why hire me for your next project?</h3>
+            <p>I love to work in User Experience & User Interface designing. Because I love to solve the design problem and find easy and better solutions to solve it. I always try my best to make good user interface with the best user experience. I have been working as a Visual designer from.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum, facere qui impedit dolor doloribus quis reiciendis ullam repellendus.</p>
+            <a href="" class="btn btn-white">Download CV</a>
+        </div>
     </div>
 </section><!-- End About-->
 
-<section class="slide-top">
-    <div class="slide-item">
-        <h3>Business Strategy</h3>
-        <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
-    </div>
-    <div class="slide-item">
-        <h3>Visual Design</h3>
-        <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
-    </div>
-    <div class="slide-item">
-        <h3>Interactive Design</h3>
-        <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
-    </div>
-    <div class="slide-item">
-        <h3>Motion Graphic</h3>
-        <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
+<section class="slide-top ">
+    <div class="slide-top-content flex">
+        <div class="slide-item">
+            <h3>Business Strategy</h3>
+            <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
+        </div>
+        <div class="slide-item">
+            <h3>Visual Design</h3>
+            <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
+        </div>
+        <div class="slide-item">
+            <h3>Interactive Design</h3>
+            <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
+        </div>
+        <div class="slide-item">
+            <h3>Motion Graphic</h3>
+            <p>Donec et venenatis libero. Fusceing dapibus pulvinar tincidunt. Proin maximus ipsum ut scelerisque.</p>
+        </div>
     </div>
 </section><!-- End Slide Top-->
 
-<section class="services">
-    <h2 class="borderpink">My Services</h2>
-    <div class="services-content">
-        <div class="services-item">
-            <span class="fa fa-modx block"></span>
-            <h3><a href="">Unique design</a></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
-        </div><!-- end item services-->
-        <div class="services-item">
-            <span class="fa fa-podcast block"></span>
-            <h3><a href="">Different Layout</a></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
-        </div><!-- end item services-->
-        <div class="services-item">
-            <span class="fa fa-bar-chart block"></span>
-            <h3><a href="">Make it Simple</a></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
-        </div><!-- end item services-->
+<section class="services ">
+    <div class="container">
+        <h2 class="borderpink">My Services</h2>
+        <div class="services-content flex">
+            <div class="services-item">
+                <span class="fa fa-modx block"></span>
+                <h3><a href="">Unique design</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
+            </div><!-- end item services-->
+            <div class="services-item">
+                <span class="fa fa-podcast block"></span>
+                <h3><a href="">Different Layout</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
+            </div><!-- end item services-->
+            <div class="services-item">
+                <span class="fa fa-bar-chart block"></span>
+                <h3><a href="">Make it Simple</a></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, minima. It is a long established fact that a reader will be distracted by the readable.</p>
+            </div><!-- end item services-->
+        </div>
     </div>
 </section><!-- End Services-->
 
-<section class="services-box">
+<section class="services-box flex">
     <div class="services-box-left">
-        <img src="./img/ss-img-izq.jpg" alt="">
+        <!-- <img src="./img/ss-img-izq.jpg" alt=""> -->
     </div>
-    <div class="services-box-right">
+    <div class="services-box-right flex">
         <div class="services-box-item">
             <span class="fa fa-laptop"></span>
             <h3>Responsiveness</h3>
