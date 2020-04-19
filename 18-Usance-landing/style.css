@@ -81,6 +81,12 @@ h2 {
 .btn:hover {
     background-color: var(--color-cyan);
 }
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
 
 .arrow a i{
     position: fixed;
@@ -175,3 +181,123 @@ header {
 }
 
 /* SUPPORT */
+.support {
+    padding: 2rem 0 4rem;
+    height: auto;
+    background-color: var(--background-color);
+    text-align: center;
+}
+.support-content {
+    margin: 0 auto;
+}
+.support-item {
+    width: 30%;
+}
+
+.support-item h3 {
+   font-size: 35px;
+   margin-bottom: 0;
+}
+.support-item p {
+    font-size: 22px;
+    margin-top: 0;
+}
+
+/* FEATURES */
+.features {
+    text-align: center;
+}
+.features-content {
+    justify-content: center;
+    margin: 2rem 0;
+}
+.features-left, .features-right {
+    width: 40%;
+}
+
+.features-left {
+    margin-right: 4rem;
+}
+.features-content div h3 {
+    font-size: 30px;
+}
+
+/* SERVICE */
+.service {
+    background-color: var(--background-color);
+    padding: 4rem 0;
+    align-items: flex-start;
+}
+.service-left, .service-right {
+    width: 50%;
+}
+.service-right h2 {
+    font-size: 50px;
+    font-weight: 500;
+}
+.service-item {
+    align-items: flex-start;
+}
+.service-item-img {
+    margin-right: 1.5rem;
+    padding: 1rem 1.5rem;
+    font-size: 30px;
+    color: var(--color-cyan);
+    background-color: #fff;
+    border-radius: 10px;
+}
+.service-item-description {
+    padding-right: 3rem;
+}
+.service-item-description h3 {
+    margin: 0;
+    font-size: 25px;
+}
+.service-item-description h3 a {
+    color: var(--color-title);
+    transition: color .5s;
+}
+.service-item-description h3 a:hover {
+    color: var(--color-cyan);
+}
+.service-item-description p {
+    margin-top: .3rem;
+}
+
+/* about */
+.about {
+    text-align: center;
+    padding-top: 2rem;
+    width: 60%;
+    margin: 0 auto;
+}
+.about-intro {
+    width: 80%;
+    margin: 0 auto;
+}
+.about-intro h2 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* CALL TO ACTION */
+.cta {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 3rem 0;
+}
+.cta div {
+    width: 50%;
+}
+.cta div h1 {
+    font-size: 40px;
+    margin-bottom: 0;
+    line-height: 3rem;
+}
+.cta div h1 span {
+    color: var(--color-orange);
+}
+.cta div p {
+    font-size: 20px;
+    margin-bottom: 4rem;
+}
