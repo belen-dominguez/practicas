@@ -2,6 +2,7 @@
     position: fixed;
     top: 0;
     left: 10px;
+    z-index: 10;
     padding: 20px;
     color: #fff;
     font-size: 15px;
@@ -76,9 +77,15 @@ main {
 
 /* Main Nav */
 .mainNav {
-    /* position: fixed; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
     height: 10%;
+    padding: 0 5rem;
     font-size: 18px;
+    background-color: rgb(12, 56, 102);
 }
 .logo i, .logo a{
     color: #fff;
@@ -98,9 +105,10 @@ main {
 /* Hero */
 .hero {
     height: 70%;
-    margin: 5rem auto;
     align-items: flex-start;
     justify-content: flex-end;
+    margin: 0 auto;
+    padding-top: 10%;
 }
 
 .hero-left {
