@@ -1,0 +1,27 @@
+.header-content {
+    align-items: flex-start;
+}
+.header-left {
+    padding: 4rem 2rem;
+    background-color: $primary-color;
+    color: #fff;
+    
+}
+.logo {
+    display: inline-block;
+    padding: .5rem .5rem .1rem;
+    border: 2px solid #fff;
+    font-size: 75px;
+    margin-bottom: 4rem;
+
+}
+.header-left h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.header-left h2 {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 2.5rem;
+}
