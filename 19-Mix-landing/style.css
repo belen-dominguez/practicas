@@ -303,14 +303,73 @@ h2 {
     margin: 1rem;
     /* border-radius: 10px; */
 }
+.work-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 99%;
+    border-radius: 10px;
+}
 .work-item img {
     border-radius: 10px;
+
 }
 
 .work-item-title {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 30%;
+    left: 30%;
     z-index: 10;
     color: #fff;
+    text-align: center;
+    
 } 
+.btn-work {
+    text-align: center;
+}
+.btn-black {
+    background-color: #000;
+    color: #fff;
+    text-transform: capitalize ;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* SLIDE BOTTOM */
+.slide-bottom {
+    background-image: url(./img/cta-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+.slide-bottom-content {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    padding: 18% 0;
+}
+.slide-bottom-content a {
+    padding: 2rem 2.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* CALL TO ACTION */
+.cta {
+    padding: 2rem;
+    text-align: center;
+}
+.cta  h1 {
+    font-size: 40px;
+}
+.cta p {
+    padding-top: 2rem;
+    font-size: 12px;
+}
