@@ -1,0 +1,29 @@
+.btn {
+    padding: 1rem;
+    border-radius: 5px;
+    color: $color-white;
+    font-size: 15px;
+    margin: 1rem 0;
+
+    //selectores
+    &-cyan{
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: $color-cyan;
+        
+        &:hover {
+            opacity: .1;
+            border: 1px solid $color-white;
+        }
+    }
+
+    &-black{
+        border: none;
+        background-color: $color-black;
+        display: block;
+
+        &:hover {
+            background-color: $color-cyan;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .main-left {
+        width: 65%;
+        background-image: url(../images/banner1.jpg);
+        background-size: cover;
+    }
+    .main-right {
+        width: 35%;
+    }
+}
