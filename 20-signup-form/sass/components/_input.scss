@@ -1,0 +1,21 @@
+input {
+    display: block;
+    width: 90%;
+    margin: .2rem 0 .5rem;
+    padding: 1rem 0;
+    border-radius: 5px;
+    border: 2px solid #BECED0;
+
+    &:focus{
+       border-color: green; 
+    }
+    &:invalid {
+        border-color: red;
+    }
+
+}
+input[type=checkbox] {
+    display: inline;
+    width: auto;
+    background-color: grey;
+}

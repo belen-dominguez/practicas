@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -45,9 +51,31 @@ a {
   border: none;
   background-color: #000;
   display: block;
+  width: 90%;
 }
 .btn-black:hover {
   background-color: #52A494;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 0.2rem 0 0.5rem;
+  padding: 1rem 0;
+  border-radius: 5px;
+  border: 2px solid #BECED0;
+}
+input:focus {
+  border-color: green;
+}
+input:invalid {
+  border-color: red;
+}
+
+input[type=checkbox] {
+  display: inline;
+  width: auto;
+  background-color: grey;
 }
 
 main {
@@ -57,11 +85,61 @@ main {
 }
 main .main-left {
   width: 65%;
+  height: 100%;
   background-image: url(../images/banner1.jpg);
   background-size: cover;
+  position: relative;
+}
+main .main-left:after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+main .main-left .left_info {
+  width: 50%;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+}
+main .main-left .left_info h3 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+main .main-left .left_info h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 1rem 0 2rem;
+}
+main .main-left .left_info p {
+  line-height: 2rem;
+  margin-bottom: 2rem;
 }
 main .main-right {
   width: 35%;
+  margin: 5rem 0 0 2rem;
+}
+main .main-right h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 0.7rem;
+}
+main .main-right p {
+  margin-bottom: 1rem;
+}
+main .main-right .copyright {
+  font-size: 13px;
+}
+
+form label {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
