@@ -1,0 +1,34 @@
+main {
+    height: 60vh;
+    text-align: center;
+
+    .icon {
+        font-size: 6rem;
+        margin: 2rem 0;
+    }
+    .login {
+        width: 30%;
+        margin: 0 auto;
+
+        .links {
+           
+            .links_up, .links__bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a {
+                    color: $color-white;
+                    margin-left: 1rem;
+                }
+                .loggedIn {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+            .links__bottom {
+                margin-top: 2rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

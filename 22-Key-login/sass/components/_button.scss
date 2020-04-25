@@ -1,0 +1,19 @@
+.btn-white {
+    background-color: rgba(255,255,255,.1);
+    padding: .3rem 1.7rem;
+
+}
+.btn-pink {
+    display: block;
+    width: 100%;
+    margin: 3rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-white;
+    background-color: $color-pink;
+    padding: 1.5rem 0;
+    border-radius: 2rem;
+    border: none;
+    letter-spacing: .3rem;
+
+}

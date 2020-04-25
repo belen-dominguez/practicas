@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Mukta", sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .repo {
   position: fixed;
   top: 0;
@@ -14,6 +38,163 @@
   font-size: 30px;
   color: #fff;
   margin-left: 5px;
+}
+
+.slide {
+  position: relative;
+  background-color: rgba(128, 128, 128, 0.3);
+  width: 6rem;
+  height: 3rem;
+  display: inline-block;
+  border-radius: 2rem;
+  transition: 0.4s;
+}
+.slide .slide__checkbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  display: inline-block;
+  width: auto;
+  opacity: 0;
+}
+.slide .slide__dot {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.5rem;
+  content: "";
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.4s;
+}
+.slide .slide__checkbox:checked + .slide__dot {
+  transform: translateX(3rem);
+}
+
+input {
+  margin: 2rem 0;
+  padding: 1.5rem 0 1.5rem 4rem;
+  display: block;
+  width: 100%;
+  border-radius: 2rem;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  color: #fff;
+}
+input:focus {
+  border-color: green;
+}
+input:invalid {
+  border-color: red;
+}
+
+.btn-white {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 1.7rem;
+}
+
+.btn-pink {
+  display: block;
+  width: 100%;
+  margin: 3rem 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background-color: #fc636b;
+  padding: 1.5rem 0;
+  border-radius: 2rem;
+  border: none;
+  letter-spacing: 0.3rem;
+}
+
+body {
+  height: 100vh;
+  background-image: url(../images/bg-img.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+header {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+header .logo a {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 400;
+}
+header .logo .fa {
+  font-size: 2.5rem;
+}
+header .menu {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu a {
+  color: #fff;
+}
+
+main {
+  height: 60vh;
+  text-align: center;
+}
+main .icon {
+  font-size: 6rem;
+  margin: 2rem 0;
+}
+main .login {
+  width: 30%;
+  margin: 0 auto;
+}
+main .login .links .links_up, main .login .links .links__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .login .links .links_up a, main .login .links .links__bottom a {
+  color: #fff;
+  margin-left: 1rem;
+}
+main .login .links .links_up .loggedIn, main .login .links .links__bottom .loggedIn {
+  display: flex;
+  align-items: center;
+}
+main .login .links .links__bottom {
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+.input__icon {
+  position: relative;
+}
+.input__icon .fa-user, .input__icon .fa-lock {
+  position: absolute;
+  top: 1.4rem;
+  left: 1.4rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .menu__footer {
+  width: 30rem;
+  display: flex;
+  justify-content: space-between;
+}
+footer .menu__footer a {
+  color: #ccc;
+}
+footer .copyright {
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
