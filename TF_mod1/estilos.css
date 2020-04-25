@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #E3E3E6;
+	margin:0;
+
+	}
+
+#contenedor {
+	width:960px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+
+	
+	}
+
+/* Header */
+header {
+	height:290px;
+	}
+
+
+/* Titulos*/
+
+h1 {
+	margin: 0 0 0 40px;
+	font-size:50px;
+	color:#333;
+	
+	}
+
+.title {
+	color:#80C141;
+	text-transform: uppercase; 
+	}
+
+h2 {
+	color:#666;
+	}
+
+h4 {
+	font-style: italic;
+	color: grey;
+}
+
+
+/* Config anclas*/
+a {
+	color: #80C141;
+	text-decoration:none;
+	}
+
+
+
+/* Botoneras*/ 
+#botonera_principal {
+	width:940px;
+	height:70px;
+	border-left: 20px solid #80C141;
+	background-color:#FFF;
+	}
+
+#botonera_principal ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;}
+
+#botonera_principal ul li {
+	display: inline;
+}
+
+#botonera_principal ul li a {
+	display: inline-block;
+	color:#333;
+	text-decoration:none;
+	text-align: center;
+	width: 187px;
+	height: 70px;
+	line-height: 70px;
+	width: 24%;
+}
+	
+#botonera_principal ul li a:hover {
+	background-color:#80C141;
+}
+
+#botonera_principal ul li a:active {
+	background-color: #80C141;
+}
+/* Hero */
+#marca {
+	background-image:url(images/fondo_marca.jpg);
+	height:200px;
+	padding-top:27px;
+	border-left:solid 20px #333;
+	}
+
+#marca ul {
+	list-style: none;
+	text-align: left;
+    margin: 30px 0 0 130px;
+}
+
+#marca ul li {
+	background-color: #80C141;
+	margin: 0 30px;
+}
+
+#marca ul li a{
+	color: black;
+    background-color: white;
+    padding: 10px 50px;
+    border-radius: 10px;
+}
+
+#marca ul li a:hover {
+	background-color: #80C141;
+}
+
+/* Contenido*/ 
+#contenido {
+	padding:20px;
+	background-color:#FFF;
+	border-left: 20px solid #80C141;
+}
+
+
+
+/* Botonera cursos*/
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+	margin: 50px 0 50px 0;
+}
+
+ul li {
+	display: inline;
+}
+
+.course-link {
+	display: inline-block;
+	width: 250px;
+    height: 40px;
+    margin: 0 15px;
+	background-color: #80C141;
+	color: black;
+	line-height: 40px;
+	border-radius: 10px;
+}
+
+.course-link:hover {
+	background-color: #CE9D50;
+}
+
+/* Contenido Pag Ppal Seccion Servicios*/
+.servicios ul {
+	
+}
+
+.servicios ul li {
+	display: inline-block;
+    width: 32%;
+}
+
+.servicios ul li a {
+	background-color: white;
+    display: block;
+    color: black;
+    padding: 20px 0;
+    margin-top: -10px;
+    border-radius: 10px;
+    border: solid 1px grey;
+}
+
+.servicios ul li a:hover {
+	background-color: #80C141;
+}
+
+.servicios img {
+	width: 100%;
+	height: 200px;
+
+}
+
+/* Pagina Clientes*/
+.table-clientes {
+	margin: 50px;
+}
+
+.table-clientes img {
+	height: 150px;
+	width: 250px;
+}
+
+.table-clientes td {
+	border: solid 1px grey;
+}
+
+/* Form tickets*/
+.form-ticket {
+	width: 400px;
+}
+
+.form-ticket ul {
+	text-align: left;
+}
+
+#input-prioridad input {
+	display: inline;
+    width: 30px;
+}
+
+
+/* Form Contacto*/	
+.form {
+	width: 400px;
+	text-align: left;
+	margin-left: 30px;
+}
+
+.form li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+textarea {
+	width: 99%;
+    margin: 10px 0;
+}
+
+select {
+	width: 100%;
+    margin: 10px 0;
+	height: 24px;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.button-submit {
+	display: block;
+    width: 400px;
+    text-align: center;
+}
+
+input {
+	display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+	background-color:#80C141;
+	padding:20px;
+	border-left: 20px solid #333;
+
+	}
+
+footer a {
+	color:#FFF;
+	font-weight:bold;
+	}
