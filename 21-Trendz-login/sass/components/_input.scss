@@ -1,0 +1,44 @@
+input {
+    display: block;
+    width: 85%;
+    margin: 2rem auto;
+    padding: 1rem .5rem;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+    border: 1px solid grey;
+
+    &:focus {
+        border-color: green;
+    }
+    &:invalid {
+        border-color: red;
+    }
+
+
+}
+
+.dynamic-label {
+    position: relative;
+    padding-top: 1rem;
+
+    input:placeholder-shown + label {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    //placeholder-show = significa cuando el place holder se esta mostrando.
+    //entonces mientras el placeholder se muestre, el label tiene que tener opacity de 0 (no se vea)
+
+    //ello implica que cuando empiece a tipear, y el placeholder desaparezca, se va a mostrar ese transform de moverlo para arriba 1rem
+
+    label {
+        display: block;
+        transition: all, 0.8s, ease-out, .5s;
+        // opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        font-size: 1.7rem;
+        font-weight: $f-weight-300;
+    }
+
+}
