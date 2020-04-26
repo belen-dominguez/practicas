@@ -1,0 +1,18 @@
+.repo {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    z-index: 10;
+    padding: 20px;
+    color: #fff;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    & a > span > i {
+        font-size: 30px;
+        color: #fff;
+        margin-left: 5px;
+    }
+}

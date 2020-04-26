@@ -1,0 +1,24 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    max-width: 1500px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    overflow-x: hidden;
+
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
