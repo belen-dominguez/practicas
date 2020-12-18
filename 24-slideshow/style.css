@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+    height: 300px;
+    position: relative;
+
+}
+
+.slides {
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+}
+.slide-c1 {
+    width: 100%;
+}
+.slide-c2 {
+    width: 50%;
+}
+.slide-c3 {
+    width: 30%;
+}
+.slide-c4 {
+    width: 25%;
+}
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tab-container {
+    display: none;
+}
+.tablink {
+    background-color: transparent;
+    border: none;
+    margin: .5rem;
+    /* padding: .5rem 1rem; */
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+}
+.tablink:hover{
+    border: 1px solid #fca306;
+}
+.tablink.active {
+    background-color: #fca306 !important;
+    color: white;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    height: 50px;
+    padding: 0 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+
+}
+.arrow:focus{
+    outline: none;
+}
+.btn-prev {
+    left: -50px;
+}
+.btn-next {
+    right: -50px;
+}
+
+.tab {
+    display: flex;
+    margin: 2rem;
+}
+.country-destinations {
+    display: none;
+}
+.change-slide {
+    width: 70%;
+    margin: 2rem auto;
+    text-align: center;
+}
+.change-slide button {
+    margin: 1rem;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid grey;
+}
+.change-slide button:hover{
+    border: 1px solid #fca306;
+}
+.change-slide button.activeBtn{
+   background-color:  #fca306;
+   color: white;
+}
+
+.active {
+    display: block;
+}

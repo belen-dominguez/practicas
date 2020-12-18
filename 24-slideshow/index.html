@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="">
+        <div class="tab">
+            <button onclick="openTab(event, 'Guides');" class="tablink active">Guides</button>
+            <button onclick="openTab(event, 'Outfitters'); " class="tablink">Outfitters</button>
+        </div>
+        <div id="Guides" class="container tab-container active">
+            <div   class="slides ">
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure2.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure3.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure4.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure2.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure3.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure4.jpg" alt="">
+                </div>
+                <div class="slide slide-c1">
+                    <img src="./imgs/adventure3.jpg" alt="">
+                </div>
+            </div>
+            <button class="btn-prev arrow arrow-l"><i class="fas fa-arrow-left"></i></button>
+            <button class="btn-next arrow arrow-r"><i class="fas fa-arrow-right"></i></button>
+            <h2>Guides</h2>
+            <div id="change-slide-1" class="change-slide">
+                <button onclick="chageNroSlide(1, this)">One Slide</button>
+                <button onclick="chageNroSlide(2, this)">Two Slides</button>
+                <button onclick="chageNroSlide(3, this)">Three Slides</button>
+                <button onclick="chageNroSlide(4, this)">Four Slides</button>
+            </div>
+        </div>
+        <div id="Outfitters" class="container tab-container" >
+            <div   class="slides " >
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure2.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure3.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure4.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure2.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure3.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure4.jpg" alt="">
+                </div>
+                <div class="slide slide-c4">
+                    <img src="./imgs/adventure2.jpg" alt="">
+                </div>
+            </div>
+            <button  class="btn-prev arrow arrow-l"><i class="fas fa-arrow-left"></i></button>
+            <button  class="btn-next arrow arrow-r"><i class="fas fa-arrow-right"></i></button>
+            <h2>Outfitters</h2>
+            <div  id="change-slide-2" class="change-slide">
+                <button onclick="chageNroSlide(1, this)">One Slide</button>
+                <button onclick="chageNroSlide(2, this)">Two Slides</button>
+                <button onclick="chageNroSlide(3, this)">Three Slides</button>
+                <button onclick="chageNroSlide(4, this)">Four Slides</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
