@@ -1,0 +1,146 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+}
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+/*Generales */
+.btn {
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: .5rem 1rem;
+}
+.selected {
+    border: 3px solid palevioletred !important;
+}
+
+
+/*Elementos*/
+.user-selection {
+    width: 70%;
+    margin: auto;
+    font-size: 25px;
+}
+#plan-value{
+    font-size: 30px;
+}
+ form {
+    margin: 2rem;
+} 
+
+.step-container {
+    width: 100%;
+    margin: 2rem auto;
+    display: none;
+}
+.plan-title {
+    text-align: center;
+}
+.plan-title h2 {
+    margin: .8rem;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.plan-main-container{
+    display: flex;
+    justify-content: center;
+}
+.plan-container {
+    height: 430px;
+    margin: 2.5rem;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 30px;
+}
+.btn,
+.plan-intro,
+.plan-intro h4,
+.price {
+    margin: 1rem;
+}
+.plan-intro {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+.plan-intro h4 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.plan-intro .price {
+    font-size: 30px;
+}
+.plan-intro .price span {
+    font-size: 20px;
+}
+.plan-intro input {
+    display: none;
+}
+.plan-detail {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.plan-container.services-table {
+    width: 23%;
+    height: 300px;
+    margin: 2.5rem .25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.plan-container.services-table .plan-intro {
+    margin: .5rem;
+    height: 162px;
+    justify-content: center;
+}
+.plan-container.services-table .plan-intro h4,
+.plan-container.services-table .plan-intro .price,
+.plan-container.services-table .plan-intro .btn-select{
+    margin: .2rem;
+}
+.plan-container.services-table .plan-intro h4 {
+    font-size: 24px;
+}
+.plan-container.services-table .plan-detail {
+    text-align: center;
+}
+
+.active {
+    display: block;
+}
+
+.btn-container {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan-sumary {
+    width: 30%;
+    margin: 2rem auto;
+}
+.plan-sumary h4 {
+    text-align: center;
+    margin: 1rem;
+    font-size: 25px;
+}
