@@ -33,9 +33,26 @@ h1 {
     width: 70%;
     margin: auto;
     font-size: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 #plan-value{
     font-size: 30px;
+}
+.btn-price-calc {
+    width: 100px;
+    padding: .5rem;
+}
+.btn-price-month {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.btn-price-year {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.chage-price-calc  span{
+    font-size: 15px;
 }
  form {
     margin: 2rem;
@@ -144,3 +161,41 @@ h1 {
     margin: 1rem;
     font-size: 25px;
 }
+.plan-sumary p, {
+    margin-bottom: .5rem;
+}
+#extra-services {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto .5rem;
+}
+.plan-contact {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.plan-contact input {
+    margin: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 30px;
+    border: 1px solid gray;
+}
+
+ .btn-send {
+    width: 200px;
+    padding: .8rem;
+    border-radius: 30px;
+    border: 1px solid gray;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 500;
+ }
+ .btn-send:hover {
+     background-color: lightgray;
+     color: white;
+ }
