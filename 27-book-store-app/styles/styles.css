@@ -1,0 +1,182 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+img{
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+.header-nav {
+    width: 80%;
+    margin: 1.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-nav .logo {
+    width: 200px;
+}
+.header-nav nav {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-search {
+    width: 100%;
+    background-color: lightgrey;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: right;
+    height: 70px;
+    width: 100%;
+   
+}
+.inner-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.search-bar {
+    width: 60%;
+    text-align: right;
+}
+.login, .favorites {
+    width: 10%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.slide {
+    width: 90%;
+    margin: 0 auto 1rem;
+    display: flex;
+}
+.vertical-menu {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-top: -70px;
+}
+.vertical-menu button {
+    display: inline-block;
+    width: 100%;
+    background-color: grey;
+    height: 54px;
+    padding: 1rem 9rem 1rem 0 ;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+.fa-arrow-circle-right {
+    margin-left: 1rem;
+}
+.vertical-menu a:hover{
+    background-color: lightgrey;
+}
+.vertical-menu a:hover > .fa-arrow-circle-right {
+    color: teal;
+}
+.slide-container {
+    width: 60%;
+    height: 200px;
+}
+.slide-container img {
+    object-fit: cover;
+    height: inherit;
+    width: 100%;
+}
+.container {
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cover-div {
+    width: 20%;
+    margin-right: .5rem;
+}
+
+/*Book*/
+#book-detail {
+    display: none;
+}
+.go-back {
+    width: 80%;
+    margin: 1rem auto; 
+}
+.book-detail-container {
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-around;
+}
+.left {
+    width: 40%;
+}
+.left .book-img  {
+    text-align:center;
+}
+.left .book-img img {
+    width: 70%;
+    height: 315px;
+    object-fit: cover;
+}
+.left .book-fav {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left .book-fav .book-fav_link {
+    margin: .5rem;
+    border: 2px solid blueviolet;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    width: 60%;
+    text-align: center;
+}
+.right {
+    width: 60%;
+}
+.right .details {
+    margin: 1rem 0;
+}
+
+#fav-container {
+    display: none;
+    width: 30vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: ivory;
+    padding: 1rem;
+}
+.close {
+    text-align: right;
+}
+.close .fa-times-circle{
+    cursor: pointer;
+}
+.fav-book-container .cover-div{
+    width: 50%;
+    padding: .5rem;
+}
+
+.display {
+    display: block !important;
+}
+.noDisplay {
+    display: none;
+}

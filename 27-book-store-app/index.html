@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <header> 
+        <div class="header-nav">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <span>The Book Store</span>
+            </div>
+            <nav>
+                <a href="">Novedades</a>
+                <a href="">Más Vendidos</a>
+                <a href="">Contacto</a>
+            </nav>
+        </div>   
+        <div class="header-search">
+            <div class="inner-container">
+                <div class="search-bar">
+                    <input id="search-input" type="text">
+                    <button id="search-btn">Search</button>
+                </div>
+                <div class="login">
+                    <i class="far fa-user"></i>
+                    <p>Login</p>
+                </div>
+                <div class="favorites" onclick="displayFav()">
+                    <span id="fav-qty"></span>
+                    <i class="far fa-heart"></i>
+                    <p>Fav</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <nav class="vertical-menu">
+                <button href="" onclick="getProducts('fiction')">Fiction <i class="fas fa-arrow-circle-right"></i></button>
+                <button href="" onclick="getProducts('love')">Romance <i class="fas fa-arrow-circle-right"></i></button>
+                <button href="" onclick="getProducts('fantasy')">Fantasy <i class="fas fa-arrow-circle-right"></i></button>
+                <button href="" onclick="getProducts('thriller')">Thriller <i class="fas fa-arrow-circle-right"></i></button>
+                <button href="" onclick="getProducts('horror')">Horror <i class="fas fa-arrow-circle-right"></i></button>
+            </nav>
+            <div class="slide-container">
+              <img src="./book1.jpeg" alt="">
+            </div>
+        </div>
+    </header>
+    
+<div class="container" id="home">
+    <div class="cover-div">
+        <a href="./book.html" onclick="">
+            <img src="http://covers.openlibrary.org/b/id/442957-M.jpg" alt="">
+        </a>
+    </div>
+    <div class="cover-div">
+        <a href="">
+            <img src="http://covers.openlibrary.org/b/id/442957-M.jpg" alt="">
+        </a>
+    </div>
+</div>
+<div id="book-detail">
+    <div class="go-back">
+        <a href="#home">Go Back</a>
+    </div>
+    <div class="book-detail-container">
+
+        <div class="left">
+            <div class="book-img">
+                <img src="http://covers.openlibrary.org/b/id/442957-M.jpg" alt="">
+            </div>
+            <div class="book-fav">
+                <a href="" class="book-fav_link">Guardar en Favoritos</a>
+                <a href="" class="book-fav_link">Compartir</a>
+            </div>
+        </div>
+        <div class="right">
+            <h2>Titulo</h2> <!--sale de /subjects-->
+            <h3>Author</h3><!--sale de /subjects-->
+            <div class="details"> <!--sale de /books-->
+                <p>Publisher</p>
+                <p>ISBN</p>
+                <p>ISBN</p>
+            </div>
+            <div class="summary"> <!--sale de /work-->
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil explicabo earum, deleniti ab veritatis corrupti quaerat vitae reiciendis dolore debitis voluptate impedit ducimus autem quos cupiditate voluptas facilis magnam rem?
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fav-container">
+    <div class="close" >
+        <i class="far fa-times-circle" onclick="closeFav()"></i>
+    </div>
+    <div class="fav-book-container">
+        <div class="cover-div">
+            <a href="./book.html" onclick="">
+                <img src="http://covers.openlibrary.org/b/id/442957-M.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
