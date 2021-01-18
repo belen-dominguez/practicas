@@ -32,7 +32,7 @@ const getImgCover = async (arrBooks) => {
             arrID[i] = 442957;
 
         }
-       let imgURL = `http://covers.openlibrary.org/b/id/${arrID[i]}-M.jpg`
+       let imgURL = `https://covers.openlibrary.org/b/id/${arrID[i]}-M.jpg`
 
        arrBooks[i] = {...arrBooks[i], imgURL}
        
@@ -114,7 +114,7 @@ const fetchSearch = async (search) => {
     }
 
     let searchResults = [];
-    const url = `http://openlibrary.org/search.json?q=${search}&limit=20`
+    const url = `https://openlibrary.org/search.json?q=${search}&limit=20`
 
     const response = await fetch(url);
     const data = await response.json()
