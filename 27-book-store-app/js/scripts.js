@@ -2,13 +2,16 @@ let subjectBook = []
 let arrIMgCover = []
 
 const getProducts = async (category) => {
-    let url = `https://openlibrary.org/subjects/${category}.json?limit=50`
 
+    
+    let url = `https://openlibrary.org/subjects/${category}.json?limit=50`
+    
     const response = await fetch(url)
     const data = await response.json()
-
+    
     subjectBook = data.works
     subjectBook && getImgCover(subjectBook)
+    displayTitleCat(category)
 
 }
 
@@ -49,9 +52,8 @@ const getImgCover = async (arrBooks) => {
 
 
 const showImg = (arrIMg) => {
-    const container = document.querySelector('.container')
 
-    console.log(arrIMg)
+    const container = document.querySelector('.container')
 
     const infoToCheck = ["author_key", "author_name", "key", "lending_edition", "authors","title", "cover_i", "cover_id","imgURL" ]
 
@@ -60,27 +62,40 @@ const showImg = (arrIMg) => {
             /*aca solo levanto las props de cada item*/
         return filter = Object.keys(item)
              /*filtro cada item para que me devuelva las props que encesito*/
-            .filter(key => infoToCheck.includes(key))
+            .filter(key => {
+                return  infoToCheck.includes(key)
+                
+            })
              /*que me devuelva por cada item nu objecto con las prop que necesito*/
             .reduce((obj, key) => {
+                
                 obj[key] = item[key]
                 return obj
             },{})
-           
-       
-    })
+     })
 
-    console.log(arrReduce)
+
+     for(let i = 0; i< infoToCheck.length; i++){
+
+        for (let j = 0 ; j< arrReduce.length; j++){
+            
+            if(arrReduce[j][infoToCheck[i]] == undefined){
+    
+                arrReduce[j][infoToCheck[i]] = "No information"
+            }
+        }
+     }
+
    
     if(arrIMg[0].cover_i){
        
         container.innerHTML = arrReduce.reduce((html, book) => {
           
-           console.log(book.author_key[0])
             return html + `
                 <div class="cover-div" id="${book.cover_i}" data-authorLink="${book.author_key[0]}" data-author="${book.author_name[0]}" data-work="${book.key}" data-title="${book.title}">
                     <a  href="#book-detail" onclick="getBookDetails(event)">
                         <img class="imgData" id="${book.cover_i}" src="${book.imgURL}" alt="">
+                        <h4>${book.title}</h4> 
                     </a>
                 </div>
                 `
@@ -95,6 +110,8 @@ const showImg = (arrIMg) => {
             <div class="cover-div" id="${book.lending_edition}" data-authorLink="${book.authors[0].key}" data-author="${book.authors[0].name}" data-work="${book.key}" data-title="${book.title}">
                 <a  href="#" onclick="getBookDetails(event)">
                     <img class="imgData" id="${book.cover_id}" src="${book.imgURL}" alt="">
+                    <h4>${book.title}</h4> 
+                    <p>${book.authors[0].name}</p>
                 </a>
             </div>
             `
@@ -162,7 +179,17 @@ const getBookDetails =  (e) => {
 
 /*favorites*/
 const favoriteBook = []
-const saveFavorites = (data ) => {
+const saveFavorites = (image, title, author ) => {
+
+    let data = {
+        img: image,
+        title: title,
+        author: author,
+        publishers: bookDetails.publish_date[0],
+        publish_date: bookDetails.publish_date,
+        description: bookDetails.description,
+        isSaved: ""
+    }
     
     const btnFav = document.querySelector('.book-fav_link')
     
@@ -174,7 +201,7 @@ const saveFavorites = (data ) => {
     }
     else {
         btnFav.innerHTML = 'Saved';
-        favoriteBook.push(data);
+        favoriteBook.push({...data, isSaved: true});
     }
     
     const favQty = document.getElementById('fav-qty');

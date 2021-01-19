@@ -25,7 +25,7 @@
         <div class="header-search">
             <div class="inner-container">
                 <div class="search-bar">
-                    <input id="search-input" type="text">
+                    <input id="search-input" type="text" placeholder="Type your search">
                     <button id="search-btn">Search</button>
                 </div>
                 <div class="login">
@@ -33,14 +33,15 @@
                     <p>Login</p>
                 </div>
                 <div class="favorites" onclick="displayFav()">
-                    <span id="fav-qty"></span>
                     <i class="far fa-heart"></i>
+                    <span id="fav-qty"></span>
                     <p>Fav</p>
                 </div>
             </div>
         </div>
         <div class="slide">
             <nav class="vertical-menu">
+                <h2>CATEGORIES</h2>
                 <button href="" onclick="getProducts('fiction')">Fiction <i class="fas fa-arrow-circle-right"></i></button>
                 <button href="" onclick="getProducts('love')">Romance <i class="fas fa-arrow-circle-right"></i></button>
                 <button href="" onclick="getProducts('fantasy')">Fantasy <i class="fas fa-arrow-circle-right"></i></button>
@@ -52,7 +53,9 @@
             </div>
         </div>
     </header>
-    
+<div class="title-container">
+    <h2>Displaying <span id="show-cat"></span> Books</h2>
+</div>
 <div class="container" id="home">
     <div class="cover-div">
         <a href="./book.html" onclick="">
