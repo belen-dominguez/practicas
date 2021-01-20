@@ -1,8 +1,15 @@
+const container = document.querySelector('.container');
+const bookContainer = document.getElementById('book-detail')
+
 let subjectBook = []
 let arrIMgCover = []
 
 const getProducts = async (category) => {
 
+    if(container.classList.contains('noDisplay')){
+        container.classList.remove('noDisplay')
+        bookContainer.classList.remove('display')
+    }
     
     let url = `https://openlibrary.org/subjects/${category}.json?limit=50`
     
@@ -53,7 +60,7 @@ const getImgCover = async (arrBooks) => {
 
 const showImg = (arrIMg) => {
 
-    const container = document.querySelector('.container')
+   
 
     const infoToCheck = ["author_key", "author_name", "key", "lending_edition", "authors","title", "cover_i", "cover_id","imgURL" ]
 
@@ -124,7 +131,7 @@ const showImg = (arrIMg) => {
 
 /*SEARCH*/
 const fetchSearch = async (search) => {
-    const container = document.querySelector('.container')
+    //const container = document.querySelector('.container')
   
     if(container.classList.contains('noDisplay')) {
         container.classList.remove('noDisplay')    
@@ -144,6 +151,7 @@ const fetchSearch = async (search) => {
 
 /*Book details*/
 let bookDetails = {}
+let prueba5 = {}
 const fetchBookDetails = async (urlWork, urlBook, imgSrc, bookDetailHolder) => {
     const responseBook = await fetch(urlBook);
     const dataBook = await responseBook.json();
@@ -153,8 +161,48 @@ const fetchBookDetails = async (urlWork, urlBook, imgSrc, bookDetailHolder) => {
 
     bookDetails = {...dataBook, ...dataWork, imgSrc, bookDetailHolder}
 
-    // displayBookDetails(bookDetails, imgSrc, bookDetailHolder)
-    displayBookDetails(bookDetails)
+    prueba5 = {
+        img: imgSrc,
+        title: bookDetailHolder.title,
+        author: bookDetailHolder.author,
+        publishers: "",
+        publish_date:"",
+        description: ""
+    }
+
+    const infoToCheck = ["publishers", "publish_date", "description"]
+    
+    infoToCheck.forEach(item => {
+    
+        if(bookDetails[item] == undefined){
+            prueba5[item] = 'No information'
+        }
+        else {
+            
+            if(item == 'description'){
+                
+                if(typeof( bookDetails[item]) == 'object'){
+                    
+                    //prueba5[item] =   bookDetails[item]
+                    prueba5[item] = bookDetails[item].value
+                }
+                else {
+                
+                    prueba5[item] = bookDetails[item]
+                }
+            }
+            else if(item == 'publishers'){
+                prueba5[item] = bookDetails[item][0]
+            }
+            else {
+
+                prueba5[item]=  bookDetails[item]
+            }
+        }
+     })
+
+    //displayBookDetails(bookDetails)
+    displayBookDetails(prueba5)
 }
 
 
@@ -181,27 +229,31 @@ const getBookDetails =  (e) => {
 const favoriteBook = []
 const saveFavorites = (image, title, author ) => {
 
-    let data = {
-        img: image,
-        title: title,
-        author: author,
-        publishers: bookDetails.publish_date[0],
-        publish_date: bookDetails.publish_date,
-        description: bookDetails.description,
-        isSaved: ""
-    }
+    
+    // let data = {
+    //     img: image,
+    //     title: title,
+    //     author: author,
+    //     publishers: bookDetails.publish_date[0],
+    //     publish_date: bookDetails.publish_date,
+    //     description: bookDetails.description,
+    //     isSaved: ""
+    // }
+    console.log(prueba5)
     
     const btnFav = document.querySelector('.book-fav_link')
     
     if(btnFav.innerHTML == 'Saved'){
         btnFav.innerHTML = 'Save to Favorites';
-        let index = favoriteBook.indexOf(data)
+        //let index = favoriteBook.indexOf(data)
+        let index = favoriteBook.indexOf(prueba5)
         favoriteBook.splice(index, 1)
         
     }
     else {
         btnFav.innerHTML = 'Saved';
-        favoriteBook.push({...data, isSaved: true});
+        //favoriteBook.push({...data, isSaved: true});
+        favoriteBook.push({...prueba5, isSaved: true});
     }
     
     const favQty = document.getElementById('fav-qty');
