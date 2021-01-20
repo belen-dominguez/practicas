@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
-const bookContainer = document.getElementById('book-detail')
+const bookContainer = document.getElementById('book-detail');
+const favContainer = document.getElementById('fav-container');
 
 let subjectBook = []
 let arrIMgCover = []
@@ -49,18 +50,10 @@ const getImgCover = async (arrBooks) => {
     }
 
    showImg(arrBooks)
-
-//    localStorage.setItem(`${cat}`, `${JSON.stringify(subjectBook)}` );
-
-//    pruebaArr = JSON.parse(localStorage.getItem('prueba') || "[]");
-
-  
 }
 
 
 const showImg = (arrIMg) => {
-
-   
 
     const infoToCheck = ["author_key", "author_name", "key", "lending_edition", "authors","title", "cover_i", "cover_id","imgURL" ]
 
@@ -94,36 +87,8 @@ const showImg = (arrIMg) => {
      }
 
    
-    if(arrIMg[0].cover_i){
-       
-        container.innerHTML = arrReduce.reduce((html, book) => {
-          
-            return html + `
-                <div class="cover-div" id="${book.cover_i}" data-authorLink="${book.author_key[0]}" data-author="${book.author_name[0]}" data-work="${book.key}" data-title="${book.title}">
-                    <a  href="#book-detail" onclick="getBookDetails(event)">
-                        <img class="imgData" id="${book.cover_i}" src="${book.imgURL}" alt="">
-                        <h4>${book.title}</h4> 
-                    </a>
-                </div>
-                `
-         },"")
-    }
-
-    if(arrIMg[0].cover_id) {
-        container.innerHTML = arrReduce.reduce((html, book) => {
-           
-
-            return html + `
-            <div class="cover-div" id="${book.lending_edition}" data-authorLink="${book.authors[0].key}" data-author="${book.authors[0].name}" data-work="${book.key}" data-title="${book.title}">
-                <a  href="#" onclick="getBookDetails(event)">
-                    <img class="imgData" id="${book.cover_id}" src="${book.imgURL}" alt="">
-                    <h4>${book.title}</h4> 
-                    <p>${book.authors[0].name}</p>
-                </a>
-            </div>
-            `
-        },"")
-    }
+     dislayAllBooks(arrIMg,arrReduce)
+   
 
 }
 
@@ -131,8 +96,7 @@ const showImg = (arrIMg) => {
 
 /*SEARCH*/
 const fetchSearch = async (search) => {
-    //const container = document.querySelector('.container')
-  
+
     if(container.classList.contains('noDisplay')) {
         container.classList.remove('noDisplay')    
     }
@@ -151,7 +115,7 @@ const fetchSearch = async (search) => {
 
 /*Book details*/
 let bookDetails = {}
-let prueba5 = {}
+let bookInfo = {}
 const fetchBookDetails = async (urlWork, urlBook, imgSrc, bookDetailHolder) => {
     const responseBook = await fetch(urlBook);
     const dataBook = await responseBook.json();
@@ -161,7 +125,7 @@ const fetchBookDetails = async (urlWork, urlBook, imgSrc, bookDetailHolder) => {
 
     bookDetails = {...dataBook, ...dataWork, imgSrc, bookDetailHolder}
 
-    prueba5 = {
+    bookInfo = {
         img: imgSrc,
         title: bookDetailHolder.title,
         author: bookDetailHolder.author,
@@ -175,34 +139,32 @@ const fetchBookDetails = async (urlWork, urlBook, imgSrc, bookDetailHolder) => {
     infoToCheck.forEach(item => {
     
         if(bookDetails[item] == undefined){
-            prueba5[item] = 'No information'
+            bookInfo[item] = 'No information'
         }
         else {
             
             if(item == 'description'){
                 
                 if(typeof( bookDetails[item]) == 'object'){
-                    
-                    //prueba5[item] =   bookDetails[item]
-                    prueba5[item] = bookDetails[item].value
+
+                    bookInfo[item] = bookDetails[item].value
                 }
                 else {
                 
-                    prueba5[item] = bookDetails[item]
+                    bookInfo[item] = bookDetails[item]
                 }
             }
             else if(item == 'publishers'){
-                prueba5[item] = bookDetails[item][0]
+                bookInfo[item] = bookDetails[item][0]
             }
             else {
 
-                prueba5[item]=  bookDetails[item]
+                bookInfo[item]=  bookDetails[item]
             }
         }
      })
 
-    //displayBookDetails(bookDetails)
-    displayBookDetails(prueba5)
+    displayBookDetails(bookInfo)
 }
 
 
@@ -227,38 +189,47 @@ const getBookDetails =  (e) => {
 
 /*favorites*/
 const favoriteBook = []
-const saveFavorites = (image, title, author ) => {
+const saveFavorites = ( ) => {
 
-    
-    // let data = {
-    //     img: image,
-    //     title: title,
-    //     author: author,
-    //     publishers: bookDetails.publish_date[0],
-    //     publish_date: bookDetails.publish_date,
-    //     description: bookDetails.description,
-    //     isSaved: ""
-    // }
-    console.log(prueba5)
     
     const btnFav = document.querySelector('.book-fav_link')
     
     if(btnFav.innerHTML == 'Saved'){
         btnFav.innerHTML = 'Save to Favorites';
-        //let index = favoriteBook.indexOf(data)
-        let index = favoriteBook.indexOf(prueba5)
+        let index = favoriteBook.indexOf(bookInfo)
         favoriteBook.splice(index, 1)
         
     }
     else {
         btnFav.innerHTML = 'Saved';
-        //favoriteBook.push({...data, isSaved: true});
-        favoriteBook.push({...prueba5, isSaved: true});
+        favoriteBook.push({...bookInfo, isSaved: true});
     }
     
     const favQty = document.getElementById('fav-qty');
     favQty.innerHTML = (favoriteBook.length)
 }
 
+
+/*change Slide*/
+let currentItem = 0;
+const changeSlide = (number) => {
+    const slideItems = document.querySelectorAll('.slide-item')
+
+    for(let i = 0; i < slideItems.length; i++){
+        slideItems[i].classList.add('noDisplay')
+    }
+
+    currentItem = currentItem + number
+
+    if(currentItem < 0){
+        currentItem = (slideItems.length - 1)
+    }
+    if(currentItem > (slideItems.length - 1)){
+        currentItem = 0
+    }
+
+    slideItems[currentItem].classList.remove('noDisplay');
+
+}
 
 getProducts('horror')

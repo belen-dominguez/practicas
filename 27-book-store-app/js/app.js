@@ -30,61 +30,58 @@ const backToHome = (e) => {
 }
 
 
+/*display all book*/
+const dislayAllBooks = (arrIMg,arrReduce) => {
+
+    if(arrIMg[0].cover_i){
+       
+        container.innerHTML = arrReduce.reduce((html, book) => {
+          
+            return html + `
+                <div class="cover-div" id="${book.cover_i}" data-authorLink="${book.author_key[0]}" data-author="${book.author_name[0]}" data-work="${book.key}" data-title="${book.title}">
+                    <a  href="#book-detail" onclick="getBookDetails(event)">
+                        <img class="imgData" id="${book.cover_i}" src="${book.imgURL}" alt="">
+                        <h4>${book.title}</h4> 
+                    </a>
+                </div>
+                `
+         },"")
+    }
+
+    if(arrIMg[0].cover_id) {
+        container.innerHTML = arrReduce.reduce((html, book) => {
+           
+
+            return html + `
+            <div class="cover-div" id="${book.lending_edition}" data-authorLink="${book.authors[0].key}" data-author="${book.authors[0].name}" data-work="${book.key}" data-title="${book.title}">
+                <a  href="#" onclick="getBookDetails(event)">
+                    <img class="imgData" id="${book.cover_id}" src="${book.imgURL}" alt="">
+                    <h4>${book.title}</h4> 
+                    <p>${book.authors[0].name}</p>
+                </a>
+            </div>
+            `
+        },"")
+    }
+}
+
 /*display book info*/
 
 const displayBookDetails = (data) => {
    
-    //let infoToDisplay = {};
     if(typeof(data) == 'string' ){
-        // let searchBook = favoriteBook.filter(item => item.title == data);
         data = favoriteBook.filter(item => item.title == data)[0];
-        
-    
-        // infoToDisplay = {
-        //     img: searchBook[0].img,
-        //     title: searchBook[0].title,
-        //     author: searchBook[0].author,
-        //     publishers: searchBook[0].publishers,
-        //     publish_date:searchBook[0].publish_date,
-        //     description: searchBook[0].description
-        // }
-
     }
-    // else {
-    //     infoToDisplay = {
-    //         img: data.imgSrc,
-    //         title: data.bookDetailHolder.title,
-    //         author: data.bookDetailHolder.author,
-    //         publishers: "",
-    //         publish_date: "",
-    //         description: ""
-    //     }
+   
+    if(favContainer.classList.contains('display')){
+        favContainer.classList.remove('display')
+    }
 
-    //     const infoToCheck = ["publishers", "publish_date", "description"]
-
-    // infoToCheck.forEach(item => {
-    
-    //     if(data[item] == undefined){
-    //        infoToDisplay[item] = 'No information'
-    
-    //    }
-    //    else {
-    //     infoToDisplay[item]=  data[item]
-
-    //     if(infoToDisplay[item] == 'description'){
-    //         infoToDisplay[item] =   data[item].value
-    //     }
-
-    //    }
-    //  })
-
-    // }
-
-    const container = document.querySelector('.container')
     container.classList.add('noDisplay')
     
     const bookContainer = document.getElementById('book-detail')
     bookContainer.classList.add('display')
+
 
     bookContainer.innerHTML = `
     <div class="go-back">
@@ -96,7 +93,7 @@ const displayBookDetails = (data) => {
                 <img src="${data.img}" alt="">
             </div>
             <div class="book-fav">
-                <a href="#" id="saveFavBtn" class="book-fav_link" onclick="saveFavorites('${data.img}','${data.title}','${data.author}')">Save to Favorites</a>
+                <a href="#" id="saveFavBtn" class="book-fav_link" onclick="saveFavorites()">Save to Favorites</a>
                 <a href="" class="book-fav_link">Share</a>
             </div>
         </div>
@@ -132,10 +129,9 @@ const displayBookDetails = (data) => {
 }
 
 
-
+/*display favorites*/
 const displayFav = () => {
 
-    const favContainer = document.getElementById('fav-container')
     favContainer.classList.add('display')
 
     const favItemContainer = document.querySelector('.fav-book-container')

@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <div class="repo">
+        <a href="https://github.com/belen-dominguez/practicas/tree/master/27-book-store-app" target="_blank"><span title="Ingresar a Repo"> <i class="fab fa-github"></i></span></a>
+    </div>
     <header> 
         <div class="header-nav">
             <div class="logo" onclick="backToHome(event)">
@@ -17,9 +20,9 @@
                 <span>The Book Store</span>
             </div>
             <nav>
-                <a href="">Novedades</a>
-                <a href="">Más Vendidos</a>
-                <a href="">Contacto</a>
+                <a href="" style="pointer-events: none">Novedades</a>
+                <a href="" style="pointer-events: none">Más Vendidos</a>
+                <a href="" style="pointer-events: none">Contacto</a>
             </nav>
         </div>   
         <div class="header-search">
@@ -28,14 +31,16 @@
                     <input id="search-input" type="text" placeholder="Type your search">
                     <button id="search-btn">Search</button>
                 </div>
-                <div class="login">
-                    <i class="far fa-user"></i>
-                    <p>Login</p>
-                </div>
-                <div class="favorites" onclick="displayFav()">
-                    <i class="far fa-heart"></i>
-                    <span id="fav-qty"></span>
-                    <p>Fav</p>
+                <div class="icons">
+                    <div class="login">
+                        <i class="far fa-user"></i>
+                        <p>Login</p>
+                    </div>
+                    <div class="favorites" onclick="displayFav()">
+                        <i class="far fa-heart"></i>
+                        <span id="fav-qty"></span>
+                        <p>Fav</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,7 +54,30 @@
                 <button href="" onclick="getProducts('horror')">Horror <i class="fas fa-arrow-circle-right"></i></button>
             </nav>
             <div class="slide-container">
-              <img src="./book1.jpeg" alt="">
+                <div class="slide-item-holder">
+                    <div class="slide-item">
+                        <img src="./img/book1.jpeg" alt="">
+                        <div class="slide-text">
+                            <h2>Discover our New Collection</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <img src="./img/book2.jpg" alt="">
+                        <div class="slide-text">
+                            <h2>Check out out Horror Category</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <img src="./img/book3.jpg" alt="">
+                        <div class="slide-text">
+                            <h2>Lorem ipsum dolor sit amet</h2>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-slider btn-slider-right" onclick="changeSlide(+1)"><i class="fas fa-chevron-right"></i></button>
+                <button class="btn-slider btn-slider-left" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
             </div>
         </div>
     </header>
