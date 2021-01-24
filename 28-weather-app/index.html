@@ -16,6 +16,10 @@
     </div>
     <header>
         <h1>Wheather App</h1>
+        <div class="code-icon" onclick="openSideMenu()">
+            <p>Buscar Código de País</p>
+            <i class="fas fa-globe-americas" ></i>
+        </div>
     </header>
     <main>
 
@@ -33,11 +37,11 @@
         </div>
         <div class="search">
             <p>O ingrese una ciudad</p>
-            <input type="text" class="search-input" placeholder="Ciudad...">
+            <input type="text" class="search-input" placeholder="Ciudad, código del país">
         </div>
         <div class="main-container">
             <div class="title">
-                <h2 class="current-city">Buenos Aires</h2>
+                <h2 class="current-city">Buenos Aires, <a href="#" onclick="opneMOdal()">Argentina</a></h2>
                 <p  class="current-day">jueves, 9:00</p>
                 <p  class="current-weather">Mayormente Nublado</p>
             </div>
@@ -151,6 +155,44 @@
             </div>
         </div>
     </main>
+    <div id="modal" class="noDisplay">
+        <div class="modal-container">
+            <i class="far fa-times-circle" onclick="closeModal()"></i>
+            <div class="flag">
+                <img src="https://restcountries.eu/data/ind.svg" alt="">
+            </div>
+            <div class="country-name">
+                <h2>India</h2>
+                <p>País en Asia </p>
+            </div>
+            <hr>
+            <div class="country-detail">
+                <p>Nombre nativo: भारत</p>
+               <p>Capital: New Delhi</p> 
+               <p>Idiomas:</p>
+               <p>Moneda: Indian rupee, ₹</p>
+               <p>Población: </p>
+               <p>Área: </p>
+            </div>
+        </div>
+    </div>
+    <div id="code" class="noDisplay">
+        <i class="far fa-times-circle" onclick="closeSideMenu()"></i>
+        <div class="search-code">
+            <input type="text" placeholder="Ingrese el país">
+        </div>
+        <div class="search-code-results">
+            <div class="code-result-item">
+                <div class="img">
+                    <img width="48" src="https://restcountries.eu/data/afg.svg" alt="">
+                </div>
+                <div class="description">
+                    <p>País: India</p> 
+                    <p>Código: <span>IN</span> <i class="far fa-clipboard" title="Copiar Código" onclick="copyToclipboard()"></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="./js/data.js" ></script>
     <script src="./js/mychart.js"></script>

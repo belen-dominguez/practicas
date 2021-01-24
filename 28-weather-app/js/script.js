@@ -14,11 +14,20 @@ const getWeather = async (url) => {
     if(response.status !== 200) {
         alert('Se ha producido un error. Por favor intentelo nuevamente.')
     }
-   
+
     mainDetails(data)
     weeklyDetails(data.daily)
     setChart((data.hourly).slice(0,9))
 }
+
+let countryCodes = []
+const getCountryCodes = async () => {
+    const response = await fetch('https://restcountries.eu/rest/v2/all')
+    const data = await response.json()
+
+    countryCodes = data
+}
+
 
 window.addEventListener('load', () => {
     let long;
@@ -46,8 +55,8 @@ const getCountryName = async (code) => {
     const response = await fetch(url)
     const data = await response.json()
 
-    console.log(data)
     countryName = data.translations.es;
+    modalInfo(data)
 }
 
 const getCoordinates = async (url) => {
@@ -66,18 +75,31 @@ const getCoordinates = async (url) => {
 
 
 
-getWeather()
+
 
 /*Search*/
 const search = document.querySelector('.search-input')
 
-let searchValue;
+let searchToDisplay;
 search.addEventListener('keypress', (e) => {
     if (e.keyCode == 13) {
 
-        searchValue = e.target.value
-       
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=a522f2ef4539ef4c9a9ba5633f7658d0&lang=es&units=metric `;
+       let searchValue = e.target.value
+       searchToDisplay = e.target.value
+        if(searchValue.includes(',')){
+            
+            let removeComma  = searchValue
+            .split(' ')[0]
+            .split('')
+            let index = removeComma.length - 1
+            removeComma.splice(index, 1)
+            searchToDisplay = removeComma.join('')
+
+            searchValue = searchValue.split(' ').join('') ;
+        }
+
+        const API_KEY = 'a522f2ef4539ef4c9a9ba5633f7658d0'
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${API_KEY}&lang=es&units=metric`;
 
         getCoordinates(url)
 
@@ -101,11 +123,9 @@ selectCountry.addEventListener('change', (e) => {
 })
 
 selectCity.addEventListener('change', (e) => {
-    //const cityOptions = selectCity.children
 
     let selectedCity = e.target.value
     let cityData = countries.filter(item => item.city == selectedCity)
-    console.log(cityData)
 
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityData[0].lat}1&lon=${cityData[0].long}&appid=a522f2ef4539ef4c9a9ba5633f7658d0&lang=es&units=metric `;
 
@@ -146,10 +166,45 @@ for(let i= 0; i< btnTabs.length; i++){
 }
 
 
+/*MOdal*/
+const modal = document.getElementById('modal')
+
+modal.addEventListener('click', (e) => {
+
+    if(e.target.attributes.id){
+        if(e.target.attributes.id.value == 'modal'){
+            modal.classList.add('noDisplay') 
+        }
+    }
+})
+
+const openModal = () => {
+    modal.classList.remove('noDisplay')
+}
+
+const closeModal = () => {
+    modal.classList.add('noDisplay')
+}
+
+
+/*country codes container */
+const countryCodeDiv = document.getElementById('code');
+
+const openSideMenu = () => {
+    countryCodeDiv.classList.remove('noDisplay')
+}
+const closeSideMenu = () => {
+    countryCodeDiv.classList.add('noDisplay')
+}
+
+const copyToclipboard = () => {
+
+}
 
 
 /*Capitalize Words */
 const capitalizeWords = (word) => {
+
     let newString = word
     .split(' ')
     .map(word => {
@@ -164,3 +219,7 @@ const capitalizeWords = (word) => {
 
     return newString
 }
+
+
+getWeather()
+getCountryCodes()

@@ -10,6 +10,10 @@ body {
 img {
     max-width: 100%;
 }
+a {
+    text-decoration: none;
+    color: teal;
+}
 
 .repo {
     position: fixed;
@@ -32,8 +36,23 @@ img {
 }
 
 header {
-    text-align: center;
-    margin: 1rem;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem auto;
+
+}
+header .code-icon{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    cursor: pointer;
+}
+header .code-icon .fa-globe-americas {
+    font-size: 25px;
+    margin-left: 1rem;
 }
 main {
     width: 80%;
@@ -145,6 +164,102 @@ hr {
     color: rgb(204, 197, 197);
 }
 
+
+#modal {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+}
+.modal-container {
+    background-color: white;
+    width: 40%;
+    margin: 2rem auto;
+}
+.modal-container .fa-times-circle {
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 23%);
+    cursor: pointer;
+    font-size: 26px;
+    color: white;
+}
+.modal-container .flag {
+    height: 300px;
+}
+.modal-container .flag img{
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+.modal-container .country-name {
+    margin: 1rem;
+}
+.modal-container .country-name h2{
+    margin-bottom: .5rem;
+}
+.modal-container .country-detail {
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+.modal-container .country-detail p {
+    margin-bottom: .2rem;
+}
+.modal-container .country-detail p span {
+    vertical-align: super;
+    font-size: 11px;
+}
+
+#code {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.7);
+    padding: 1rem;
+}
+#code .fa-times-circle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+.search-code {
+    text-align: center;
+    margin: 1rem 0 2rem;
+}
+.search-code input {
+    padding: .5rem 1rem;
+    width: 80%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+.search-code-results .code-result-item {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5px;
+}
+.code-result-item .img {
+    width: 40%;
+    padding-left: .5rem;
+}
+.code-result-item .description span {
+    color: teal;
+    font-weight: 700;
+}
+.code-result-item .description .fa-clipboard {
+    margin-left: 1rem;
+    cursor: pointer;
+}
 .active {
     background-color:  rgb(202, 199, 199) !important;
 }

@@ -45,7 +45,7 @@ const mainDetails = (data) => {
     let currentCity;
     let country;
 
-    if(searchValue == undefined){
+    if(searchToDisplay == undefined){
         let cityDetail = data.timezone
         let strArr = cityDetail.split('/')
         let lastItem = strArr.length - 1;
@@ -56,7 +56,7 @@ const mainDetails = (data) => {
         }
     }
     else {
-        currentCity =  capitalizeWords(searchValue)
+        currentCity =  capitalizeWords(searchToDisplay)
     }
 
     if(countryName){
@@ -78,7 +78,7 @@ const mainDetails = (data) => {
     let currentWeather =  capitalizeWords(data.current.weather[0].description)
 
 
-    currentCityContainer.innerText = `${currentCity} ${country}`
+    currentCityContainer.innerHTML = `<h2 class="current-city">${currentCity} <a href="#" onclick="openModal()">${country}</a></h2>`
     currentDayContainer.innerText = `${currentDay}, ${currentHour}:${currentMin}`;
     currentWeatherContainer.innerText = currentWeather;
     currentIconContainer.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
@@ -142,4 +142,38 @@ const weeklyDetails = (data) => {
         `
     },"")
 
+}
+
+
+/*modal details*/
+
+const modalInfo = (data) => {
+
+let languages = data.languages.reduce((acc, lang) => {
+    acc += `${lang.name} `
+    return acc
+},"")
+
+
+    modal.innerHTML = `
+        <div class="modal-container">
+            <i class="far fa-times-circle" onclick="closeModal()"></i>
+            <div class="flag">
+                <img src="${data.flag}" alt="${data.name} flag">
+            </div>
+            <div class="country-name">
+                <h2>${data.translations.es}</h2>
+                <p>País en ${data.region} </p>
+            </div>
+            <hr>
+            <div class="country-detail">
+                <p>Nombre nativo: ${data.nativeName}</p>
+               <p>Capital: ${data.capital}</p> 
+               <p>Idiomas: ${languages}</p>
+               <p>Moneda: ${data.currencies[0].name}, ${data.currencies[0].symbol}</p>
+               <p>Población: ${data.population}</p>
+               <p>Área: ${data.area} km<span class="sub">2</span></p>
+            </div>
+        </div>
+        `
 }
