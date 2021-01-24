@@ -49,6 +49,7 @@ header .code-icon{
     align-items: center;
     justify-content: right;
     cursor: pointer;
+    color: teal;
 }
 header .code-icon .fa-globe-americas {
     font-size: 25px;
@@ -266,4 +267,86 @@ hr {
 }
 .noDisplay {
     display: none !important;
+}
+
+
+@media screen and (max-width: 600px){
+    header {
+        flex-direction: column;
+    }
+    header .code-icon{
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: space-evenly;
+        
+    }
+
+    .select-city {
+        flex-direction: column;
+        width: 90%;
+    }
+    .select-city select {
+        width: 100%;
+        margin: .5rem 0;
+        padding: .5rem;
+    }
+    .search {
+        flex-direction: column;
+        width: 90%;
+        align-items: flex-start;
+        text-align: left; 
+    }
+    .search input {
+        margin-top: .5rem;
+        width: 100%;
+    }
+    .main-container {
+        width: 100%;
+        margin-top: 3rem;
+    }
+    .main-container .title h2 {
+        font-size: 22px;
+        margin-bottom: .2rem;
+    }
+    .main-container .title p {
+        margin-bottom: .2rem;
+    }
+    .current-weather-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+    }
+    .daily-info  {
+        text-align: left;
+    }
+    .daily-info .tabs button {
+        margin: .5rem;
+    }
+
+    .daily-info-graph canvas {
+        width: 100% !important; 
+    }
+    .daily-info-graph #windChart {
+        height: 189px !important;
+        font-size: 10px;
+    }
+    #windChart .item {
+        width: 10%;
+        margin-left: .2rem;
+    }
+    #windChart .item img {
+        width: 70%;
+    }
+
+    #modal .modal-container {
+        width: 80%;
+        margin: 5rem auto;
+    }
+    #modal .modal-container .fa-times-circle {
+        top: 36px;
+        right: calc(50% - 45%);
+    }
+    #code {
+        width: 100vw;
+    }
 }
