@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div class="repo">
+        <a href="https://github.com/belen-dominguez/practicas/tree/master/28-weather-app" target="_blank"><span title="Ingresar a Repo"> <i class="fab fa-github"></i></span></a>
+    </div>
+    <header>
+        <h1>Wheather App</h1>
+    </header>
+    <main>
+
+        <div class="select-city">
+            <p>Seleccione un país</p>
+            <select name="" id="country">
+                <option value=""  >USA</option>
+                <option value=""  >Canada</option>
+                <option value=""  >Argentina</option>
+                <option value=""  >Brasil</option>
+            </select>
+            <select name="" id="city">
+                <option value=""  >Ciudad</option>
+            </select>
+        </div>
+        <div class="search">
+            <p>O ingrese una ciudad</p>
+            <input type="text" class="search-input" placeholder="Ciudad...">
+        </div>
+        <div class="main-container">
+            <div class="title">
+                <h2 class="current-city">Buenos Aires</h2>
+                <p  class="current-day">jueves, 9:00</p>
+                <p  class="current-weather">Mayormente Nublado</p>
+            </div>
+            <div class="current-weather-detail">
+                <div class="current-icon">
+                    <img src="./img/01d@2x.png" alt="">
+                    <p>23   <span>°C</span></p>
+                  
+                </div>
+                <div class="current-info">
+                    <p class="w-feels">Sensación térmica: 24 °C</p>
+                    <p class="w-humidity">Humedad:  73%</p>
+                    <p class="w-wind">Viento: a  14 km/h</p>
+                </div>
+            </div>
+            <div class="daily-info">
+                <div class="tabs">
+                    <button class="tempChart">Temperatura</button>
+                    <button class="precpChart">Precipitaciones</button>
+                    <button class="windChart">Viento</button>
+                </div>
+                <div class="daily-info-graph">
+                    <canvas id="tempChart" width="400" height="200"></canvas>
+                    <canvas class="noDisplay" id="precpChart" width="400" height="200" ></canvas>
+                    <div class="noDisplay" id="windChart" style="height:314px">
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img  src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                        <div class="item">
+                            <p>24 km/h</p>
+                            <img src="./img/arrow.svg" width="20" alt="">
+                            <p>19:00</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="days">
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                    <div class="day-item">
+                        <p>jue</p>
+                        <img src="./img/01d@2x.png" alt="">
+                        <p>28° . <span>22°</span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./js/data.js" ></script>
+    <script src="./js/mychart.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
