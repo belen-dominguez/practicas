@@ -10,6 +10,11 @@ const getWeather = async (url) => {
    
     const response = await fetch(url)
     const data = await response.json()
+   
+    if(response.status !== 200) {
+        alert('Se ha producido un error. Por favor intentelo nuevamente.')
+    }
+   
     mainDetails(data)
     weeklyDetails(data.daily)
     setChart((data.hourly).slice(0,9))
@@ -18,13 +23,14 @@ const getWeather = async (url) => {
 window.addEventListener('load', () => {
     let long;
     let lat;
+    const API_KEY = 'a522f2ef4539ef4c9a9ba5633f7658d0'
 
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
             lat = position.coords.latitude;
             long = position.coords.longitude;
 
-            const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}1&lon=${long}&appid=a522f2ef4539ef4c9a9ba5633f7658d0&lang=es&units=metric `;
+            const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}1&lon=${long}&appid=${API_KEY}&lang=es&units=metric `;
 
             getWeather(url)
         })
@@ -34,14 +40,28 @@ window.addEventListener('load', () => {
 
 })
 
-
-const getCoordinates = async (url) => {
+let countryName;
+const getCountryName = async (code) => {
+    const url = `https://restcountries.eu/rest/v2/alpha/${code}`
     const response = await fetch(url)
     const data = await response.json()
 
-    const newUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}1&lon=${data.coord.lon}&appid=a522f2ef4539ef4c9a9ba5633f7658d0&lang=es&units=metric `;
+    console.log(data)
+    countryName = data.translations.es;
+}
+
+const getCoordinates = async (url) => {
+    const API_KEY = 'a522f2ef4539ef4c9a9ba5633f7658d0'
+    const response = await fetch(url)
+    const data = await response.json()
+
+    if(response.status !== 200) {
+        alert('Se ha producido un error. Por favor ingrese una Ciudad')
+    }
+    const newUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}1&lon=${data.coord.lon}&appid=${API_KEY}&lang=es&units=metric `;
     
     getWeather(newUrl)
+    getCountryName(data.sys.country)
 }
 
 

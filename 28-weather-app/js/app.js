@@ -42,7 +42,8 @@ const mainDetails = (data) => {
     const currentWindCont = document.querySelector('.w-wind');
 
 /*city details*/
-    let currentCity
+    let currentCity;
+    let country;
 
     if(searchValue == undefined){
         let cityDetail = data.timezone
@@ -58,7 +59,12 @@ const mainDetails = (data) => {
         currentCity =  capitalizeWords(searchValue)
     }
 
-
+    if(countryName){
+        country = `, ${countryName}`
+    }
+    else {
+        country = ""
+    }
 
 
   /*day details*/
@@ -72,7 +78,7 @@ const mainDetails = (data) => {
     let currentWeather =  capitalizeWords(data.current.weather[0].description)
 
 
-    currentCityContainer.innerText = currentCity
+    currentCityContainer.innerText = `${currentCity} ${country}`
     currentDayContainer.innerText = `${currentDay}, ${currentHour}:${currentMin}`;
     currentWeatherContainer.innerText = currentWeather;
     currentIconContainer.src = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
