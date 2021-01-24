@@ -191,14 +191,48 @@ const closeModal = () => {
 const countryCodeDiv = document.getElementById('code');
 
 const openSideMenu = () => {
+    const searchInput = document.querySelector('.search-code input')
+    searchInput.value = "";
+    
     countryCodeDiv.classList.remove('noDisplay')
+    displaySideMenuInfo()
 }
 const closeSideMenu = () => {
     countryCodeDiv.classList.add('noDisplay')
 }
 
-const copyToclipboard = () => {
+const filterResults = (e) => {
+    let input = e.target.value.toLowerCase()
 
+    let filterItems = countryCodes.filter((item, i) => {
+       
+        if(item.translations.es ){
+            let cName = (item.translations.es).toLowerCase()
+            return cName.includes(input)
+        }
+        else {
+            return item.name.includes(input)
+        }
+
+    })
+
+    displaySideMenuInfo(filterItems)
+}
+
+const copyToclipboard = (e) => {
+    
+    let spanID = e.target.previousElementSibling.id
+    let tempInputElement = document.createElement("input");
+    tempInputElement.type = "text";
+    tempInputElement.value = spanID;
+
+    document.body.appendChild(tempInputElement);
+    tempInputElement.select()
+    tempInputElement.setSelectionRange(0, 99999);
+    document.execCommand("Copy");
+    document.body.removeChild(tempInputElement);
+
+   /*code from https://codepen.io/bharatramnani94/post/copy-text-to-clipboard-using-vanilla-javascript */
 }
 
 

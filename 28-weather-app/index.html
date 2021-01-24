@@ -36,7 +36,7 @@
             </select>
         </div>
         <div class="search">
-            <p>O ingrese una ciudad</p>
+            <p>O ingrese una ciudad con el código de su país</p>
             <input type="text" class="search-input" placeholder="Ciudad, código del país">
         </div>
         <div class="main-container">
@@ -179,7 +179,7 @@
     <div id="code" class="noDisplay">
         <i class="far fa-times-circle" onclick="closeSideMenu()"></i>
         <div class="search-code">
-            <input type="text" placeholder="Ingrese el país">
+            <input onkeyup="filterResults(event)" type="text" placeholder="Ingrese el país">
         </div>
         <div class="search-code-results">
             <div class="code-result-item">
@@ -188,7 +188,7 @@
                 </div>
                 <div class="description">
                     <p>País: India</p> 
-                    <p>Código: <span>IN</span> <i class="far fa-clipboard" title="Copiar Código" onclick="copyToclipboard()"></i></p>
+                    <p>Código: <span id="IN">IN</span> <i class="far fa-clipboard" title="Copiar Código" onclick="copyToclipboard()"></i></p>
                 </div>
             </div>
         </div>

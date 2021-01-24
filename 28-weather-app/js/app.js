@@ -177,3 +177,26 @@ let languages = data.languages.reduce((acc, lang) => {
         </div>
         `
 }
+
+
+/*country code div*/
+
+const displaySideMenuInfo = (data = countryCodes) => {
+
+    const codeDiv = document.querySelector('.search-code-results');
+    
+    codeDiv.innerHTML = data.reduce((html, item) => {
+
+        return html += `
+        <div class="code-result-item">
+            <div class="img">
+                <img width="48" src="${item.flag}" alt="${item.translations.es}">
+            </div>
+            <div class="description">
+                <p>País: ${item.translations.es}</p> 
+                <p>Código: <span id="${item.alpha2Code}">${item.alpha2Code}</span> <i class="far fa-clipboard" title="Copiar Código" onclick="copyToclipboard(event)"></i></p>
+            </div>
+        </div>
+        `
+    },"")
+}
