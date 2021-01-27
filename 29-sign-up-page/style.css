@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #000;
+    margin-left: 5px;
+}
+header, main {
+    width: 80%;
+    margin:2rem auto;
+    
+}
+h1 {
+    text-align: center;
+    margin: 3rem 0;
+}
+i {
+    margin: .5rem;
+}
+button {
+    background-color: teal;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+button:hover {
+    border: 1px solid teal;
+    color: teal;
+    background-color: white;
+}
+input, select {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    outline: none;
+    border: 1px solid teal;
+    border-radius: 5px;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+.logo {
+    color: teal;
+    font-size: 30px;
+}
+form {
+    width: 50%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    
+}
+
+.fas.fa-eye {
+    cursor: pointer;
+}
+
+.fa-check-circle {
+    color: green;
+}
+.fa-times-circle {
+    color: red;
+}
+ul {
+    list-style: none;
+    width: 85%;
+    margin: .5rem auto;
+    font-size: 14px;
+}
+.name {
+    display: flex;
+    justify-content: space-between;
+}
+.name, .email {
+    margin-bottom: 1.3rem;
+}
+.first-name, .last-name, .email {
+    position: relative;
+    width: 48%;
+}
+.email, .email input {
+    width: 100%;
+}
+
+#input-name:placeholder-shown + label,
+#input-last-name:placeholder-shown + label,
+#input-email:placeholder-shown + label {
+    opacity: 0;
+    transform: translateY(1rem);
+}
+.label-name,
+.label-last-name,
+.label-email {
+   position: absolute;
+   top: -22px;
+   left: 12px;
+   transition: all .8s ease;
+   color: rgb(194, 192, 192);
+}
+
+
+input[type="text"] {
+    width: 100%;
+}
+#input-password {
+    width: 60%;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+@media screen and (max-width: 600px){
+    form {
+        width: 100%;
+    }
+    .name {
+        flex-direction: column;
+    }
+    .first-name , .last-name {
+        width: 100%;
+        margin-bottom: .8rem;
+    }
+    .name, .pssword {
+        margin-bottom: 0;
+    }
+    .pssword #input-password {
+        width: 85%;
+    }
+    .check-points {
+        margin-bottom: 1rem;
+    }
+}

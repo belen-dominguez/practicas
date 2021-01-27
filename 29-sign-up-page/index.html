@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
+</head>
+<body> 
+    <div class="repo">
+        <a href="https://github.com/belen-dominguez/practicas/tree/master/29-sign-up-page" target="_blank"><span title="Ingresar a Repo"> <i class="fab fa-github"></i></span></a>
+    </div>
+    <header>
+        <div class="logo">
+            <p>LOGO</p>
+        </div>
+        <button>Login</button>
+    </header>
+    <main>
+        <h1>Sign Up for free account</h1>
+        
+        <form action="">
+            <div class="name">
+                <div class="first-name">
+                    <input id="input-name" type="text" placeholder="First name">
+                    <label class="label-name" for="input-name">First name</label>
+                </div>
+                <div class="last-name">
+                    <input id="input-last-name" type="text" placeholder="Last name">
+                    <label class="label-last-name" for="input-name">Last name</label>
+                </div>
+            </div>
+            <div class="email">
+                <input id="input-email" type="email" name="" id="" placeholder="Your email">
+                <label class="label-email" for="">Your email</label>
+            </div>
+            <div class="pssword">
+                <input type="password" name="" id="input-password" placeholder="Set a password" >
+                <i id="visible" class="fas fa-eye"></i>
+            </div>
+
+            <ul class="check-points hide" >
+                <li class="check-one"><i class="far fa-times-circle"></i>8 characters of more</li>
+                <li class="check-two"><i class="far fa-times-circle"></i>At least 1 letter</li>
+                <li class="check-three"><i class="far fa-times-circle"></i>At least 1 number</li>
+                <li class="check-four"><i class="far fa-times-circle"></i>A mixture of both uppercase and lowercase letters</li>
+                <li class="check-five"><i class="far fa-times-circle"></i>No special characters</li>
+            </ul>
+    
+            <button type="submit">Create account</button>
+            <p></p>
+        </form>
+    </main>
+    
+
+    <script src="js/script.js"></script>
+</body>
+</html>
