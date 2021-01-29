@@ -80,7 +80,7 @@ h1, h2, h3 {
     backface-visibility: hidden;
 }
 .front{
-    background-color: rgb(32, 156, 32); 
+    background-color: teal; 
 }
 .back {
     transform: rotateY(180deg);

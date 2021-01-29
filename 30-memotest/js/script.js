@@ -1,26 +1,30 @@
 let gameDetails = {
     level: "",
+    maxScore: 0,
     score: 0
 }
 let gameChoices = []
+
 
 /*set level one*/
 const actionBtns = document.querySelector('.levels').children;
 
 const setLevelOne = (e) => {
-    gameDetails.level = 'One';
-
+    resetGame()
     /*style button*/
     for(let i = 0; i < actionBtns.length; i++){
         actionBtns[i].classList.remove('active')
     }
-    e.target.classList.add('active')
+    actionBtns[0].classList.add('active')
 
 
     /*level 1 -> tine la mitad de img y lo duplicamos para formar los matches*/
     const qty = images.length  / 2;
     const halfItems = images.slice(0, qty)
     const dobleSize = [...halfItems, ...halfItems]
+
+    gameDetails.level = 'One';
+    gameDetails.maxScore = qty;
 
     /*ordenarlos de forma random*/
     const levelOne = shuffle(dobleSize)
@@ -30,16 +34,19 @@ const setLevelOne = (e) => {
 
 /*set lvel 2*/
 const setLevelTwo = (e) => {
-    gameDetails.level = 'Two';
+    resetGame()
 
     /*style button*/
     for(let i = 0; i < actionBtns.length; i++){
         actionBtns[i].classList.remove('active')
     }
-    e.target.classList.add('active')
+    actionBtns[1].classList.add('active')
 
     /*set level two*/
     const dobleSize = [...images, ...images]
+
+    gameDetails.level = 'Two';
+    gameDetails.maxScore = (dobleSize.length / 2);
 
 
     /*ordenarlos de forma random*/
@@ -76,11 +83,13 @@ const shuffle = (array) => {
 }
 
 const newGame = () => {
-console.log(gameDetails.level)
+
     if(gameDetails.level == "One"){
+        resetGame()
         setLevelOne()
     }
     else if(gameDetails.level == "Two"){
+        resetGame()
         setLevelTwo()
     }
 }
@@ -98,9 +107,11 @@ const selectPairs = () => {
                 gameChoices.forEach(item => {
                     item.target.parentElement.parentElement.style.visibility = "hidden";
                 })
+
                 gameChoices = [] 
                 btnHandler()
-
+                gameDetails.score++
+                checkScore()
             }, 1500);
         }
         else {
@@ -122,7 +133,22 @@ const selectPairs = () => {
 
 const btnHandler = () => {
     for(let i = 0; i < cards.length; i++){
-        //    cards[i].disabled = true
         cards[i].disabled = (!cards[i].disabled)
+    }
+}
+
+const checkScore = () => {
+    
+    if(gameDetails.maxScore == gameDetails.score){
+        alert('ganaste')
+    }
+
+}
+
+const resetGame = () => {
+    gameDetails = {
+        level: "",
+        maxScore: 0,
+        score: 0
     }
 }
