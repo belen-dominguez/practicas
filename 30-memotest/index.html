@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
-
-    <style>
-        
-    </style>
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
 
 </head>
 <body>
-    <h1>Memotest</h1>
+    <header>
+        <div class="login" onclick="login()">
+            <i class="fas fa-user"></i>
+            <p>Login</p>
+        </div>
+        <div class="user hide" onclick="showHistory()">
+            <div class="img">
+                <img src="./imgs/buho.jpg" alt="">
+            </div>
+            <p>Belen</p>
+        </div>
+        <h1>Memotest</h1>
+    </header>
     <div class="actions">
         <div class="levels">
-            <button class="btn" onclick="setLevelOne(event)">Level One</button>
-            <button class="btn" onclick="setLevelTwo(event)">Level Two</button>
+            <button class="btn" onclick="setLevelOne()">Level One</button>
+            <button class="btn" onclick="setLevelTwo()">Level Two</button>
             <button class="btn" onclick="openModal()">Level Three</button>
         </div>
         <button class="btn" onclick="newGame()">Play Again!</button>
@@ -36,7 +45,24 @@
     <div class="modal-score hide">
         <div class="inner-modal"></div>
     </div>
-    
+    <div class="timer hide"></div>
+    <div class="user-history hide">
+        <div class="header">
+            <div class="user" >
+                <div class="img">
+                    <img src="./imgs/buho.jpg" alt="">
+                </div>
+                <p>Belen</p>
+            </div>
+            <div class="close" onclick="closeModal(event)">
+                <i class="far fa-times-circle"></i>
+            </div>
+        </div>
+        <div class="item-container">
+        </div>
+        <h3 class="total-score"></h3>
+        <h3 class="high-score"></h3>
+    </div>
 
     <script src="./js/data.js"></script>
     <script src="./js/script.js"></script>

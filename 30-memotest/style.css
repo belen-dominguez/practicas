@@ -15,16 +15,52 @@ https://www.w3schools.com/cssref/css3_pr_transform-style.asp
 body {
     font-family: 'Lato', sans-serif;
 }
+img {
+    max-width: 100%;
+}
+i {
+    font-size: 40px;
+    margin-bottom: .5rem;
+}
 h1, h2, h3 {
     text-align: center;
     margin: 2rem;
+}
+
+header {
+    height: 100px;
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+}
+header .login,
+header .user {
+    width: 10%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.user .img {
+    width: 50px;
+    border-radius: 50%;
+    background-color: beige;
+}
+.user .img  img{
+    border-radius: 50%;
+} 
+header h1 {
+    display: inline-block;
+    width: 70%;
 }
 .actions {
     width: 50%;
     height: 120px;
     margin: 1rem auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
@@ -46,6 +82,9 @@ h1, h2, h3 {
 }
 .levels button {
     margin-right: 1rem;
+}
+.game-level {
+    font-size: 44px;
 }
 .container {
     width: 50%;
@@ -125,11 +164,11 @@ h1, h2, h3 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-   
+    border-radius: 10px;
  }
  
  .modal-score .inner-modal {
-    height: 250px;
+    height: 300px;
     justify-content: center;
  }
  .modal-score .inner-modal h2,
@@ -139,6 +178,50 @@ h1, h2, h3 {
  .modal-score .inner-modal .btn {
      margin-top: 1rem;
  }
+ .user-history {
+     position: fixed;
+     top: 0;
+     right: 0;
+     width: 40vh;
+     height: 100vh;
+     background-color: rgba(0,0,0,.8);
+     padding: 1rem;
+     overflow-x: scroll;
+     
+ }
+ .user-history .header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 1rem;
+ }
+.user-history .close {
+    color: white;
+    text-align: right;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.user-history .close i {
+     font-size: 25px;
+
+ }
+ .item-container .history-item {
+     background-color: white;
+     padding: 1rem;
+     border-radius: 10px;
+     display: flex;
+     margin-bottom: .5rem;
+ }
+ .history-item .img {
+     width: 30%;
+     color: teal;
+ }
+.total-score , .high-score {
+    color: white;
+    text-align: left;
+}
+
+
  .hide {
-     display: none;
+     display: none !important;
  }

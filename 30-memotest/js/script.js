@@ -1,9 +1,24 @@
+const userDetails = {
+    userName: '',
+    icon:''
+}
+
+const login = () => {
+     userDetails.userName = prompt('Enter your name')
+     showUser()
+}
+
+
+
+let gameHistory = []
+
 let gameDetails = {
     level: "",
     maxScore: 0,
     score: 0,
     tries: 0,
-    time: 0
+    time: 0,
+    points: 0
 }
 let gameChoices = []
 
@@ -13,11 +28,16 @@ const actionBtns = document.querySelector('.levels').children;
 
 const setLevelOne = (e) => {
     resetGame()
+    stopTimer();
+
+
     /*style button*/
     for(let i = 0; i < actionBtns.length; i++){
         actionBtns[i].classList.remove('active')
+        actionBtns[i].disabled = false;
     }
     actionBtns[0].classList.add('active')
+    actionBtns[0].disabled = true;
 
 
     /*level 1 -> tine la mitad de img y lo duplicamos para formar los matches*/
@@ -30,19 +50,22 @@ const setLevelOne = (e) => {
 
     /*ordenarlos de forma random*/
     const levelOne = shuffle(dobleSize)
-
+    checkTime()
 }
 
 
 /*set lvel 2*/
 const setLevelTwo = (e) => {
     resetGame()
+    stopTimer();
 
     /*style button*/
     for(let i = 0; i < actionBtns.length; i++){
         actionBtns[i].classList.remove('active')
+        actionBtns[i].disabled = false;
     }
     actionBtns[1].classList.add('active')
+    actionBtns[1].disabled = true;
 
     /*set level two*/
     const dobleSize = [...images, ...images]
@@ -53,6 +76,7 @@ const setLevelTwo = (e) => {
 
     /*ordenarlos de forma random*/
      const leveltwo = shuffle(dobleSize)
+     checkTime()
 
 }
 
@@ -60,14 +84,17 @@ const setLevelTwo = (e) => {
 const setLevelThree = (e) => {
     resetGame()
 
+
     const modal = document.querySelector('.modalLevelThree');
     modal.classList.add('hide')
 
     /*style button*/
     for(let i = 0; i < actionBtns.length; i++){
         actionBtns[i].classList.remove('active')
+        actionBtns[i].disabled = false;
     }
     actionBtns[2].classList.add('active')
+    actionBtns[2].disabled = true;
 
     /*  set level two  */
     const dobleSize = [...images, ...images]
@@ -114,21 +141,7 @@ const shuffle = (array) => {
     displayLevel(shuffleArr)
 }
 
-const newGame = () => {
 
-    if(gameDetails.level == "One"){
-        resetGame()
-        setLevelOne()
-    }
-    else if(gameDetails.level == "Two"){
-        resetGame()
-        setLevelTwo()
-    }
-    else if(gameDetails.level == "Three"){
-        resetGame()
-        setLevelThree()
-    }
-}
 
 const selectPairs = () => {
 
@@ -170,10 +183,8 @@ const selectPairs = () => {
 
 let timer
 const timerHandler = () => {
-    const timerDiv = document.createElement('div')
-    timerDiv.classList.add('timer');
-    document.body.appendChild(timerDiv);
-
+    timerDiv.classList.remove('hide')
+  
      /*set 5 min*/    
     let min = 4;
     let sec = 59
@@ -226,15 +237,82 @@ const checkTime = () => {
         time++
     },1000)
 }
+
+
+const stopTimer = () => {
+    clearInterval(timeLapse)
+    clearInterval(timer);
+    timerDiv.classList.add('hide')
+}
+
 const checkScore = () => {
     
     if(gameDetails.maxScore == gameDetails.score){
-        clearInterval(timeLapse)
-        clearInterval(timer);
+        stopTimer();
         gameDetails.time = time
+        calculateScore()
         modalScore()
-        console.log(time, gameDetails)
     }
+
+}
+
+const calculateScore = () => {
+    let maxPoints;
+    let fails = -2;
+    let extraSec = -1
+    let calcTime = 0;
+
+    /*set max points*/
+    if(gameDetails.level == "One"){
+         maxPoints = 70;
+        
+         /*set time calc */
+        if(gameDetails.time > 10) {
+            calcTime = gameDetails.time - 10
+        }
+    }
+    if(gameDetails.level == "Two" || gameDetails.level == "Three"){
+        maxPoints = 200;
+
+         /*set time calc */
+         if(gameDetails.time > 20) {
+            calcTime = gameDetails.time - 20
+        }
+   
+    }
+
+    
+
+    /*set points calc*/
+    if(gameDetails.tries == gameDetails.maxScore){
+        gameDetails.points = maxPoints;
+    }
+    else {
+        
+        let calcFails = fails * (gameDetails.tries - gameDetails.maxScore);
+        let calcTimeScore = extraSec * calcTime;
+
+        gameDetails.points =  maxPoints + calcFails + calcTimeScore;
+    }
+
+
+}
+
+const highestScore = (final) => {
+    let highScore = 0;
+    let theUser = userDetails.userName
+    if(final > highScore){
+        highScore = final;
+        displayHighScore()
+    }
+    else {
+        return
+    }
+ 
+    localStorage.setItem('highScore', highScore);
+    localStorage.setItem('user', theUser);
+
+    displayHighScore()
 
 }
 
@@ -249,4 +327,27 @@ const resetGame = () => {
 }
 
 
+const newGame = () => {
 
+    if(gameDetails.level == "One"){
+        resetGame()
+        setLevelOne()
+    }
+    else if(gameDetails.level == "Two"){
+        resetGame()
+        setLevelTwo()
+    }
+    else if(gameDetails.level == "Three"){
+        resetGame()
+        clearInterval(timeLapse)
+        clearInterval(timer);
+        setLevelThree()
+    }
+}
+
+
+window.addEventListener('load', () => {
+    setLevelOne()
+    displayHighScore()
+    
+})
