@@ -1,7 +1,9 @@
 let gameDetails = {
     level: "",
     maxScore: 0,
-    score: 0
+    score: 0,
+    tries: 0,
+    time: 0
 }
 let gameChoices = []
 
@@ -54,6 +56,36 @@ const setLevelTwo = (e) => {
 
 }
 
+/*set lvel 3*/
+const setLevelThree = (e) => {
+    resetGame()
+
+    const modal = document.querySelector('.modalLevelThree');
+    modal.classList.add('hide')
+
+    /*style button*/
+    for(let i = 0; i < actionBtns.length; i++){
+        actionBtns[i].classList.remove('active')
+    }
+    actionBtns[2].classList.add('active')
+
+    /*  set level two  */
+    const dobleSize = [...images, ...images]
+
+    gameDetails.level = 'Three';
+    gameDetails.maxScore = (dobleSize.length / 2);
+
+
+    /*ordenarlos de forma random*/
+     const levelThree = shuffle(dobleSize)
+
+     /*ejecutar tiempo*/
+     timerHandler()
+
+     /*contabilizar tiempo*/
+     checkTime()
+}
+
 
 const shuffle = (array) => {
    /*creo arr con nros aleatorias, q no se repitan*/
@@ -92,12 +124,16 @@ const newGame = () => {
         resetGame()
         setLevelTwo()
     }
+    else if(gameDetails.level == "Three"){
+        resetGame()
+        setLevelThree()
+    }
 }
 
 const selectPairs = () => {
 
     if(gameChoices.length == 2){
-
+        gameDetails.tries++
         btnHandler()
         
         if(gameChoices[0].option == gameChoices[1].option){
@@ -112,7 +148,7 @@ const selectPairs = () => {
                 btnHandler()
                 gameDetails.score++
                 checkScore()
-            }, 1500);
+            }, 1000);
         }
         else {
            
@@ -123,12 +159,56 @@ const selectPairs = () => {
                 })
                 gameChoices = [] 
                 btnHandler()
-            }, 1500);
+            }, 1000);
            
         }
 
     }
     
+}
+
+
+let timer
+const timerHandler = () => {
+    const timerDiv = document.createElement('div')
+    timerDiv.classList.add('timer');
+    document.body.appendChild(timerDiv);
+
+     /*set 5 min*/    
+    let min = 4;
+    let sec = 59
+
+    timer = setInterval(() => {
+        --sec
+
+        if(sec == 0){
+            sec = 59;
+            --min
+        }
+
+
+        if(sec < 10){
+            timerDiv.innerText = `0${min} : 0${sec}`  
+        }
+        else {
+            timerDiv.innerText = `0${min} : ${sec}`
+        }
+
+        if(min == 0){
+            timerDiv.style.color = "red";
+            timerDiv.style.border = "2px solid red";
+        }
+
+        if(min < 0){
+            timerDiv.innerText = `00 : 00`;
+            btnHandler();
+            modalScore()
+            clearInterval(timer);
+        }
+        
+    },1000)
+
+
 }
 
 const btnHandler = () => {
@@ -137,10 +217,23 @@ const btnHandler = () => {
     }
 }
 
+
+let time;
+let timeLapse
+const checkTime = () => {
+    time = 0;
+    timeLapse = setInterval(() => {
+        time++
+    },1000)
+}
 const checkScore = () => {
     
     if(gameDetails.maxScore == gameDetails.score){
-        alert('ganaste')
+        clearInterval(timeLapse)
+        clearInterval(timer);
+        gameDetails.time = time
+        modalScore()
+        console.log(time, gameDetails)
     }
 
 }
@@ -149,6 +242,11 @@ const resetGame = () => {
     gameDetails = {
         level: "",
         maxScore: 0,
-        score: 0
+        score: 0,
+        tries: 0,
+        time: 0
     }
 }
+
+
+

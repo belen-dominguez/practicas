@@ -3,3 +3,7 @@ cuando la persona pinche 'play again' le decimos que ejecute la funcion del nive
 ->  container.setAttribute('data-level', 'two')
 
 tmb podemos crear un objeto dnd quede almacenado el nivel seleccionado.
+
+
+
+-contar la cantidad de intentos

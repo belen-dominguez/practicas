@@ -26,9 +26,6 @@ const displayLevel = (items) => {
 }
 
 
-
-
-
 const setCardEvent = () => {
 
     for(let i = 0; i < cards.length; i++){
@@ -43,3 +40,28 @@ const setCardEvent = () => {
     }
 }
 
+const modalScore = () => {
+    const modalScore = document.querySelector('.modal-score ')
+    const modalScoreCntent = document.querySelector('.modal-score .inner-modal')
+    modalScore.classList.remove('hide')
+
+    console.log(gameDetails.time, time)
+    modalScoreCntent.innerHTML = `
+        <h2>TIMES UP!!</h2>
+        <p>Nro of tries: ${gameDetails.tries}</p>
+        <p>Time: ${gameDetails.time} seconds</p>
+        <button class="btn" onclick="closeModalScore()">Close</button>
+    `
+}
+
+const closeModalScore = () => {
+    const modalScore = document.querySelector('.modal-score')
+    modalScore.classList.add('hide')
+    container.innerHTML = 'Select a level...'
+}
+
+const openModal = () => {
+    const modal = document.querySelector('.modalLevelThree');
+    modal.classList.remove('hide')
+
+}

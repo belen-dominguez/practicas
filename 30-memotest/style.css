@@ -12,6 +12,9 @@ https://www.w3schools.com/cssref/css3_pr_transform-style.asp
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Lato', sans-serif;
+}
 h1, h2, h3 {
     text-align: center;
     margin: 2rem;
@@ -41,14 +44,19 @@ h1, h2, h3 {
     color: teal;
     background-color: transparent;
 }
-.levels button:first-child {
+.levels button {
     margin-right: 1rem;
 }
 .container {
     width: 50%;
     margin: 3rem auto;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #3d52a6;
+    padding: 3rem;
+    border-radius: 10px;
+    color: white;
 }
 .card {
     width: 100px;
@@ -57,6 +65,7 @@ h1, h2, h3 {
     margin: .5rem;
     cursor: pointer;
     border: none;
+    border-radius: 10px;
 }
 /* .card:hover  .card-inner{
     transform: rotateY(180deg);
@@ -80,9 +89,56 @@ h1, h2, h3 {
     backface-visibility: hidden;
 }
 .front{
-    background-color: teal; 
+    background-color: cornflowerblue; 
+    border-radius: 10px;
 }
 .back {
     transform: rotateY(180deg);
 }
+ .back img {
+    border-radius: 10px;
+ }
 
+ .timer {
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    font-size: 30px;
+    border: 2px solid teal;
+    padding: .5rem 1rem;
+ }
+
+ .modalLevelThree, .modal-score  {
+     position: fixed;
+     top: 0;
+     background-color: rgba(0,0,0,.8);
+     width: 100vw;
+     height: 100vh;
+
+ }
+ .inner-modal {
+    width: 30%;
+    height: 150px;
+    margin: 2rem auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+ }
+ 
+ .modal-score .inner-modal {
+    height: 250px;
+    justify-content: center;
+ }
+ .modal-score .inner-modal h2,
+ .modal-score .inner-modal p {
+     margin: .5rem;
+ }
+ .modal-score .inner-modal .btn {
+     margin-top: 1rem;
+ }
+ .hide {
+     display: none;
+ }
