@@ -15,25 +15,6 @@ https://www.w3schools.com/cssref/css3_pr_transform-style.asp
 body {
     font-family: 'Lato', sans-serif;
 }
-.repo {
-    position: fixed;
-    top: 0;
-    left: 10px;
-    z-index: 5;
-    padding: 20px;
-    color: #000;
-    font-size: 15px;
-    background-color: rgba(0,0,0,.5);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
-    
-}
-.repo a > span > i {
-    font-size: 30px;
-    color: #000;
-    margin-left: 5px;
-}
 img {
     max-width: 100%;
 }
