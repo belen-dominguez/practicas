@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <script src='https://kit.fontawesome.com/a9410861d7.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <div class="repo">
+        <a href="https://github.com/belen-dominguez/practicas/tree/master/31-puzzle-app" target="_blank"><span title="Ingresar a Repo"> <i class="fab fa-github"></i></span></a>
+    </div>
+    <header>
+        <div class="level-container">
+            <div class="level" onclick="openModal('One')">
+                <div class="img">
+                    <img src="./imgs/puzzle-One.jpg" alt="">
+                </div>
+                <p>Level One</p>
+                <div class="overlay">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="level"  onclick="openModal('Two')">
+                <div class="img">
+                    <img src="./imgs/puzzle-Two.jpg" alt="">
+                </div>
+                <p>Level Two</p>
+                <div class="overlay">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="level"  onclick="openModal('Three')">
+                <div class="img">
+                    <img src="./imgs/puzzle-Three.jpg" alt="">
+                </div>
+                <p>Level Three</p>
+                <div class="overlay">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="level"  onclick="openModal('Four')">
+                <div class="img">
+                    <img src="./imgs/puzzle-Four.jpg" alt="">
+                </div>
+                <p>Level Four</p>
+                <div class="overlay">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+            <div class="level"  onclick="openModal('Five')">
+                <div class="img">
+                    <img src="./imgs/puzzle-Five.jpg" alt="">
+                </div>
+                <p>Level Five</p>
+                <div class="overlay">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+        <h1 class="title">Select a Level</h1>
+    </header>
+    <div class="modal">
+        <i class="fas fa-times" onclick="closeModal()"></i>
+        <div class="inner-modal">
+            <div class="content">
+                <h2>Self Portrait</h2>
+                <h3>Author: Leonardo Da Vinci</h3>
+                <div class="details">
+                    <p>Level: One</p>
+                    <p>Difficulty: Easy</p>
+                    <p>Number of pieces: 15</p>
+                </div>
+                <button onclick="setLevel('One')">Play Level one</button>
+            </div>
+            <div class="image">
+                <img src="./imgs/puzzle-One.jpg" alt="">
+            </div>
+        </div>
+        <div class="arrows">
+            <i class="fas fa-chevron-left" onclick="changeSlide(-1, event)"></i>
+            <i class="fas fa-chevron-right" onclick="changeSlide(+1, event)"></i>
+        </div>
+    </div>
+    <div class="container">
+        <div class="puzzle-container">
+            <p class="flip-btn" onclick="rotate()">Flip to see image <i class="fas fa-sync-alt" ></i></p> 
+
+            <div class="puzzle-inner"> 
+                <div class="puzzle">
+                </div>
+                <div class="puzzle-back">
+                </div>
+            </div>
+           
+        </div>
+        <div class="piezas">
+        </div>
+        
+    </div>
+    <div class="mensaje">
+        <p>You win!</p>
+        <a href="">Play again</a>
+    </div>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

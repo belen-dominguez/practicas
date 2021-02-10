@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+img {
+    max-width: 100%;
+}
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #000;
+    margin-left: 5px;
+}
+header {
+    width: 90%;
+    margin: 2rem auto;
+    text-align: center;
+   
+}
+.level-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+header .level {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+}
+
+header .level  .img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-bottom: .5rem;
+}
+
+header .level img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+}
+header .overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+header .overlay i {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: white;
+    font-size: 25px;
+}
+header .level:hover .overlay {
+    display: block;
+}
+
+header .title {
+    margin: 1rem;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.puzzle-container {
+    position: relative; 
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    width: 45%;
+    margin-left: 2rem;
+
+}
+.puzzle-inner {
+    position: relative;
+    height: 100%; 
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.flip-btn {
+    cursor: pointer;
+    display: none;
+    margin-bottom: .5rem;
+    padding: .5rem 1rem;
+    border: 2px solid orange;
+}
+.flip-btn span {
+    color: orange;
+    font-weight: 700;
+}
+.fa-sync-alt {
+   color: orange;
+   margin-left: .5rem;
+   font-size: 20px;
+}
+.puzzle {
+    display: flex;
+    flex-wrap: wrap;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* transition: .5s visibility ease-in-out;
+    visibility: visible;  */
+}
+
+.puzzle-item {
+    border: 1px solid black;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.puzzle-item.hover {
+    background-color: blue;
+}
+
+.puzzle-back , .puzzle{
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background-color: white;
+   
+}
+.puzzle-back {
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.piezas {
+    width: 50%;
+    margin: 2rem 1.5rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-start;
+}
+.pieza {
+    background-size: cover;
+    margin: 5px;
+    cursor: pointer;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.pieza  img{
+    width: 100%;
+    height: 100%;
+   
+}
+.mensaje {
+    display: none;
+    position: fixed;
+    top: 35%;
+    left: 30%;
+    width: 500px;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0,0,0,.8);
+    padding: 1rem 1.5rem;
+    color: white;
+    font-size: 30px;
+}
+
+.mensaje a {
+    cursor: pointer;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    background-color: orange;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+.mensaje a:hover {
+    background-color: transparent;
+    font-size: 25px;
+    color: orange;
+    border: 2px solid orange;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 10%;
+    width: 80vw;
+    height: 80vh;
+    background-color: rgba(0,0,0,.8);
+    z-index: 10;
+}
+.modal .fa-times {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+.inner-modal {
+    width: 80%;
+    height: 80%;
+    margin: 1rem auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.inner-modal .content {
+    width: 50%;
+    margin: 5rem 1rem 0 0;
+    color: white;
+    font-size: 25px;
+}
+.inner-modal .content h2,
+.inner-modal .content h3 {
+    margin-bottom: .5rem;
+}
+.inner-modal .content span {
+    color: teal;
+    font-weight: 700;
+}
+.inner-modal .content button {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: .5s all ease;
+    cursor: pointer;
+}
+.inner-modal .content button:hover {
+    background-color: transparent;
+    color: orange;
+    border: 2px solid orange;
+}
+.inner-modal .image {
+    width: 50%;
+    height: 100%;
+}
+.inner-modal .image  img{
+    height: inherit;
+    object-fit: cover;
+}
+.arrows{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50px;
+    width: 100%;
+}
+.arrows i {
+    color: teal;
+    font-size: 50px;
+    position: absolute;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+.arrows i:hover {
+    color: orange;
+}
+.arrows .fa-chevron-left {
+    left: 40px;
+}
+.arrows .fa-chevron-right {
+    right: 40px;
+}
+
+.rotate {
+    transform: rotateY(180deg); 
+}
+.no-visibility {
+    visibility: hidden;
+    transition: .3s all ease-in-out;
+}
+.display {
+    display: inline-block;
+}
+.transition {
+    animation: deleteBorder 4s ;
+}
+
+
+@keyframes deleteBorder {
+    0% {
+     border: 1px solid black;
+    }
+   
+    50% {
+        border: 1px solid white;  
+    }
+ 
+    100% {
+      border: none;
+    }
+}
