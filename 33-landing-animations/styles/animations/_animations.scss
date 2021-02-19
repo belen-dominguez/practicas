@@ -1,0 +1,170 @@
+@keyframes fadeIn {
+    0% { 
+       opacity: 0; 
+    }
+
+    100% {
+        opacity: 1; 
+    }
+ }
+ @keyframes fadeOut {
+    0% { 
+       opacity: 1; 
+    }
+
+    100% {
+        opacity: 0; 
+    }
+ }
+
+
+@keyframes bounceIn {
+    0% { 
+       opacity: 0; 
+       transform: scale(.3);
+    }
+    50% { 
+       opacity: 1;
+       transform: scale(1.05);
+    }
+    70% {
+       transform: scale(.9);
+    }
+    100% {
+       transform: scale(1);
+    }
+ }
+ @keyframes bounceInText {
+    0% { 
+       opacity: 0; 
+       transform: scale(.3);
+    }
+    50% { 
+       opacity: 1;
+       transform: scale(1.5);
+    }
+    100% {
+        opacity: 1; 
+       transform: scale(1);
+    }
+ }
+
+ @keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+    20% {
+		transform: translatey(-10px);
+	}
+    40% {
+		transform: translatey(10px);
+	}
+    
+	60% {
+		transform: translatey(-10px);
+	}
+    80% {
+		transform: translatey(10px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes fade {
+    0% { 
+       opacity: 1; 
+       transform: scale(1);
+    }
+    50% { 
+       opacity: 1;
+       transform: scale(.5);
+    }
+    100% {
+       opacity: 0;
+       transform: scale(0);
+       display: none;
+    }
+ }
+
+ @keyframes mistEven {
+    0% { 
+        opacity: 1; 
+         transform: translate(10px,5px) scale(.9);
+     }
+     50% { 
+         opacity: .5; 
+          transform: translate(15px,20px) scale(1);
+     }
+     100% {
+         opacity: .7; 
+          transform: translate(-5px,0px) scale(.7);
+     }
+ }
+ @keyframes mistOdd {
+    0% { 
+       opacity: 1; 
+        transform: translate(-5px,-5px) scale(.8);
+    }
+    50% { 
+        opacity: .4; 
+         transform: translate(10px,15px) scale(1.1);
+    }
+    100% {
+        opacity: .7; 
+        transform: translate(5px,10px) scale(.9);
+    }
+ }
+
+ @keyframes mistTail {
+    0% { 
+        transform: translate(-70px, -42px) scale(1);
+    }
+    50% { 
+         transform: translate(-100px,0) scale(.9);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-100px,20px) scale(.5);
+    }
+ }
+
+
+
+ @keyframes mistTailItem {
+    0% { 
+       opacity: 1; 
+    }
+    50% { 
+        opacity: .3; 
+    }
+    75% {
+        opacity: .1; 
+    }
+    100% {
+        opacity: .2; 
+    }
+ }
+
+
+ @keyframes translateText {
+
+     100% {
+       text-align: left;
+     }
+     
+ }
+ @keyframes slideInText {
+     0% {
+         opacity: 0;
+         transform: translateX(-72px);
+     }
+     50% {
+        opacity: .5;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

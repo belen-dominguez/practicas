@@ -1,0 +1,98 @@
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+    &-content {
+        width: 50%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        animation:  fade 1s ease 5s;
+
+        &__image {
+            
+            position: relative;
+            width: 200px;
+            text-align: center;
+            animation: 
+                bounceIn 1s, 
+                float 4s ease 1s;
+
+            .mist {
+                position: absolute;
+                bottom: 0;
+                left: 8px;
+                z-index: -1;
+                width: 79%;
+                height: 94%;
+
+                span {
+                    display: inline-block;
+                    width: 50px;
+                    height: 50px;
+                    background-color: rgba(255,255,255,.5);
+                    border-radius: 50%;
+                    filter: blur(30px);
+                }
+                .mist-tail {
+                    width: 100%;
+                    height: 96px;
+                    animation: mistTail 5s ease infinite;
+
+                    span.tail-item {
+
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        background-color: rgba(255,255,255,.5);
+                        border-radius: 50%;
+                        filter: blur(50px);
+                        animation: mistTailItem 5s ease infinite;
+                    }
+                    span.tail-item:first-child {
+                        width: 40px;
+                        height: 30px;
+                        filter: blur(30px);
+                    }
+                   
+                }
+                span:nth-child(even){
+                     animation: mistEven 6s ease infinite;
+                }
+                span:nth-child(odd){
+                     animation: mistOdd 6s ease infinite;
+                }
+            }
+            
+
+        }
+        &__text {
+            width: 200px;
+            font-style: italic;
+            animation: bounceInText  1s ease-in-out;
+        }
+        &__text.translate {
+                text-align: left;
+
+            span {
+                display: inline-block;
+                animation: slideInText .5s linear;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    &-content.fadeOut {
+        animation: fadeOut 1s ease;
+    }
+}
