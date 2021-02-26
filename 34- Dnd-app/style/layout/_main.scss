@@ -1,0 +1,14 @@
+main {
+    width: 100%;
+    height: calc(100vh - 8rem);
+    background-color: rgb(110, 110, 231);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+
+    @media screen and (max-width: 600px){
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,37 @@
+html {
+    font-size: 62.5%; //1rem=10px
+}
+body {
+      font-size: 1.7rem;
+     font-family: 'Noto Sans JP', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.display {
+    display: flex !important;
+}
+.hidden {
+    display: none !important;
+}

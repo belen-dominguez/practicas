@@ -1,0 +1,25 @@
+.btn {
+    padding: 1rem 1.5rem;
+    outline: none;
+    border: 2px solid rgb(110, 110, 231);
+    border-radius: 1rem;
+    background-color: rgb(110, 110, 231);
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,.5);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    cursor: pointer;
+
+
+    &:hover {
+        border: 2px solid rgb(110, 110, 231);
+        background-color: transparent;
+        color: rgb(110, 110, 231);
+    }
+    &-header:hover{
+        border: 2px solid #fff;
+        background-color: transparent;
+        color: #fff;
+    }
+}
