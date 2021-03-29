@@ -1,0 +1,52 @@
+
+.detail .numbers .change:nth-child(1) {
+    animation: 
+        numbers 1s linear forwards,
+        numbers2 1s linear 4s forwards,
+        numbers3 1s linear 8s forwards,
+        numbers3 1s linear 16s reverse forwards,
+        numbers2 1s linear 20s reverse forwards,
+        numbers 1s linear 24s reverse forwards;
+}
+
+/*estatico*/
+.detail .numbers .change2 {
+   
+    animation: 
+        numbers 1s linear  forwards,
+        numbers 1s linear 23s reverse forwards;
+}
+
+.detail .numbers .change:nth-child(2) {
+    animation: 
+        /* numbers2 1s linear 5s forwards, */
+        numbers 1s linear  forwards,
+        numbers2 1s linear 4s forwards,
+        numbers3 1s linear 9s forwards,
+        numbers3 1s linear 15s reverse forwards,
+        numbers2 1s linear 20s reverse forwards,
+        numbers 1s linear 23s reverse forwards;
+        /*
+        aca tuve q hacer 2 correccion en los segundos de 5 a 4, de 19 a 20 para que no se pisen los elementos.
+        */
+        /* numbers2 1s linear 19s reverse forwards, */
+}
+.detail .numbers .change:nth-child(3) {
+    animation: 
+        numbers 1s linear 2s forwards,
+        numbers2 1s linear 6s forwards,
+        numbers3 1s linear 10s forwards,
+        numbers3 1s linear 14s reverse forwards,
+        numbers2 1s linear 18s reverse forwards,
+        /* numbers2 1s linear 19s reverse forwards, */
+        numbers 1s linear 22s reverse forwards;
+}
+.detail .numbers .change:nth-child(4) {
+    animation: 
+        numbers 1s linear 3s forwards,
+        numbers2 1s linear 7s forwards,
+        numbers3 1s linear 11s forwards,
+        numbers3 1s linear 13s reverse forwards,
+        numbers2 1s linear 17s reverse forwards,
+        numbers 1s linear 21s reverse forwards;
+}
