@@ -218,7 +218,7 @@ main {
     width: 100vw;
     height: 200vh;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     
 }
 .slide3 {
