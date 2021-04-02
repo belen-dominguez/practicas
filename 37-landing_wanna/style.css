@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+}
+h2 {
+    font-size: 50px;
+}
+
+/*Repo*/
+.repo {
+    position: fixed;
+    top: 0;
+    left: 10px;
+    z-index: 5;
+    padding: 20px;
+    color: #000;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.5);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    
+}
+.repo a > span > i {
+    font-size: 30px;
+    color: #fff;
+    margin-left: 5px;
+}
+
+
+/*Section Hero*/
+header {
+    height: 100vh;
+}
+.logo,
+.hero {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+  
+    align-items: center;
+}
+.logo {
+    height: 50px;
+    padding: 2rem 0;
+    justify-content: space-between;
+}
+.hero {
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero h1 {
+    color: #121c42;
+    font-size: 120px;
+    text-align: center;
+}
+.hero p {
+    color: grey;
+    font-size: 23px;
+}
+.hero .btn {
+    display: inline-block;
+    padding: 1rem 4.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: #f4a816;
+    font-size: 20px;
+}
+.hero .btn:hover {
+    background-color: #e6a42a;
+}
+
+.hero h1,
+.hero p {
+    margin-bottom: 2rem;
+}
+
+/*Section illustration*/
+.illustration {
+    height: 110vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+}
+.illustration img {
+    position: relative;
+}
+
+.illustration img:nth-child(1){
+    max-width: 460px;
+    z-index: 5;
+}
+.illustration img:nth-child(2){
+    max-width: 600px;
+    z-index: 7;
+}
+.illustration img:nth-child(3){
+    max-width: 500px;
+    z-index: 10;
+}
+
+
+/*Sec Uses */
+
+main {
+    background: linear-gradient(white, lightblue) ;
+}
+.uses {
+    padding: 10rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.uses h2 {
+    width: 50%;
+    margin: 2rem auto 7rem;
+    text-align: center;
+    
+}
+
+
+.uses-images {
+    width: 70%;
+    margin: 2rem auto;
+}
+.uses-images img {
+    max-width: 100%;
+}
+
+.uses-imag__up {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+.uses-imag__up img {
+    width: 30%;
+}
+
+.uses-float-img {
+    height: 800px;
+    width: 90%;
+    position: absolute;
+    bottom: 18%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.uses-float-img img {
+    max-width: 300px;
+}
+.uses-float-img img:nth-child(1){
+    align-self: flex-start;
+}
+.uses-float-img img:nth-child(2){
+    align-self: flex-end;
+}
+
+/*Sec banner */
+.banner {
+    height: 100vh;
+    background-image: url('./img/skate_guy.png');
+    background-size: 39%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-attachment: fixed;
+    background-color: #405df6;
+    color: white;
+}
+.banner-text {
+    width: 50%;
+    padding: 10rem 0 0 5rem;
+}
+.banner h1 {
+    font-size: 125px;
+    margin-bottom: 2rem;
+}
+.banner p {
+    font-size: 25px;
+    width: 60%;
+}
+
+
+/* Sec description */
+.description {
+    height: 100vh;
+    padding-top: 10rem;
+    background-color: lightpink;
+}
+.description h2 {
+    text-align: center;
+    color: white;
+}
+.description img {
+    width: 20%;
+}
+.container-slides {
+    position: relative;
+    width: 100vw;
+    height: 600vh;
+}
+
+.slide {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 200vh;
+    display: flex;
+    justify-content: right;
+    
+}
+.slide3 {
+    background-color: grey;
+    height: 100vh;
+}
+.slide2 {
+    background-color: lightcoral;
+}
+.slide1 {
+    background-color: lightpink;
+}
+
+.text {
+    width: 50%;
+    margin: 200px 2rem 0 0;
+    
+}
+.text p {
+    color: white;
+    font-size: 20px;
+}
+.text h1 {
+    color: white;
+    font-size: 80px;
+}
+
+.container-images {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+.img1 {
+    z-index: 10;
+}
+.img2 {
+    z-index: 5;
+}
+.img3 {
+    z-index: 1;
+    
+}
+
+.img-rocket {
+    position: relative;
+    top: 110px;
+    left: 200px;
+}
+
+.img1 .img-rocket {
+    z-index: 10;
+}
+
+
+/* SLIDE PARTS*/
+
+.parts-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.description .top,
+.description .window,
+.description .bottom  {
+    position: absolute;
+ 
+}
+.description .top {
+    width: 13%;
+    top: 0px;
+    left: 234px;
+    z-index: 11;
+}
+.description .window {
+    top: 160px;
+    width: 13%;
+    left: 20px;
+    z-index: 11;
+}
+.description .bottom {
+    top: 440px;
+    left: 284px;
+    width: 3.5%;
+    z-index: 5;
+}
+
+
+/* Animation */
+.title-anim {
+    opacity: 0;
+    transform: translate3d(0, 120px, 0) scale(.5);
+    transition: all 1s ease;
+}
