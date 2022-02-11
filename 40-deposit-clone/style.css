@@ -544,3 +544,58 @@ footer .credits div {
   flex-basis: 50%;
   padding-left: 2rem;
 }
+
+@media screen and (max-width: 1400px) {
+  .hero-left p {
+    font-size: 0.9rem;
+  }
+  .hero h1 {
+    font-size: 6rem;
+    line-height: 5rem;
+  }
+
+  .index-content {
+    width: 50%;
+    height: 60%;
+  }
+  .index-content h2 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 6rem;
+  }
+  .section h5 {
+    font-size: 1rem;
+  }
+  .section p {
+    font-size: 0.8rem;
+  }
+
+  .card {
+    width: auto;
+  }
+  .card img {
+    width: 100%;
+  }
+
+  .content .section-title {
+    font-size: 3rem;
+    top: 90px;
+  }
+  .image-gallery {
+    top: 25%;
+    grid-template-rows: 300px;
+  }
+  .img-container .info-image {
+    font-size: 12px;
+  }
+  .floating-content .content h2 {
+    font-size: 2rem;
+  }
+
+  footer h5,
+  footer p {
+    font-size: 1rem;
+  }
+}
