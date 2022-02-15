@@ -1,0 +1,84 @@
+.what {
+  margin: 10rem 5rem;
+
+  .what-item {
+    position: relative;
+    border-top: 1px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 3rem 0;
+    transition: all 0.7s ease;
+
+    &:last-child {
+      border-bottom: 1px solid black;
+    }
+
+    &:hover {
+      background-color: $bg-yellow;
+      transition: all 0.7s ease;
+
+      .arrow {
+        left: 65%;
+        transition: all 0.7s ease;
+        .line[data-num="1"] {
+          div {
+            transform: scale(0);
+          }
+        }
+      }
+    }
+  }
+  .arrow {
+    position: absolute;
+    left: 20px;
+    top: 12rem;
+    transition: all 0.7s ease;
+    .line[data-num="1"] {
+      background-color: transparent;
+
+      div {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  .item-text {
+    width: 60%;
+    margin-left: 15rem;
+    font-weight: $fw-400;
+  }
+  .item-text .sub-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .title-description {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    @media screen and (max-width: 1440px) {
+      font-size: 3rem;
+    }
+  }
+  .description {
+    opacity: 0;
+    height: 0;
+    line-height: 35px;
+    font-size: 2rem;
+    margin-bottom: 0;
+    @media screen and (max-width: 1440px) {
+      font-size: 1.5rem;
+    }
+  }
+  .item-img {
+    width: 20%;
+    position: absolute;
+    right: 3rem;
+    top: 0;
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}

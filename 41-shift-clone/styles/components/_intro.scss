@@ -1,0 +1,72 @@
+.anim-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url("./images/intro.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+
+  &.hide {
+    display: none;
+  }
+
+  .text {
+    position: absolute;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: $fw-700;
+    @media screen and (max-width: 1440px) {
+      font-size: 4rem;
+    }
+  }
+  .text-one {
+    color: $bg-green-work;
+    opacity: 0;
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    .yellow {
+      color: $bg-yellow;
+    }
+  }
+  .text-two {
+    position: absolute;
+    color: $bg-green-work;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    .yellow {
+      color: $bg-dark-green;
+      display: inline-block;
+    }
+  }
+
+  .bg-green {
+    height: 100%;
+    display: flex;
+    div {
+      height: 100%;
+      flex-basis: 25%;
+      background-color: $bg-dark-green;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  .bg-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    div {
+      height: 100%;
+      flex-basis: 25%;
+      background-color: white;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+  }
+}

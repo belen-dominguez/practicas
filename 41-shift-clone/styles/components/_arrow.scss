@@ -1,0 +1,29 @@
+.arrow {
+  position: relative;
+  .line {
+    background-color: black;
+    height: 2px;
+    display: inline-block;
+  }
+  .line[data-num="1"] {
+    width: 19px;
+    transform: rotate(127deg) translate(1px, -10px);
+    position: absolute;
+    top: 17px;
+    div {
+      transform-origin: left bottom;
+    }
+  }
+  .line[data-num="2"] {
+    width: 30px;
+    margin-left: 23px;
+  }
+  .line[data-num="3"] {
+    width: 15px;
+    transform: rotate(45deg) translate(-15px, 8px);
+  }
+  .line[data-num="4"] {
+    width: 15px;
+    transform: rotate(-45deg) translate(-29px, -21px);
+  }
+}

@@ -1,0 +1,46 @@
+.work {
+  background-color: $bg-green-work;
+  padding: 10rem 7rem;
+
+  .title {
+    margin-bottom: 5rem;
+  }
+
+  .work-items {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+  }
+
+  .work-item {
+    flex-basis: 35%;
+  }
+  .image-container {
+    position: relative;
+    background-color: $bg-dark-green;
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+
+  .item-logo {
+    width: 30%;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 0;
+    transition: z-index 1s ease;
+  }
+  .item-img {
+    clip-path: polygon(0 14%, 71% 14%, 72% 100%, 0 100%);
+
+    img {
+      margin-bottom: -4px;
+    }
+  }
+
+  .text-container {
+    margin-left: 2rem;
+    font-weight: $fw-400;
+    font-size: 3rem;
+  }
+}

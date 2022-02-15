@@ -1,0 +1,36 @@
+footer {
+  background-color: $bg-dark-green;
+  padding: 10rem 7rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+  .column {
+    flex-basis: 45%;
+    .title {
+      color: $bg-yellow;
+      font-size: 8rem;
+      margin-bottom: 4rem;
+
+      @media screen and (max-width: 1440px) {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .button {
+    margin-bottom: 20rem;
+    .background {
+      border: 1px solid $bg-yellow;
+    }
+  }
+
+  .addresses {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+  .address {
+    transform: rotate(-10deg);
+  }
+}

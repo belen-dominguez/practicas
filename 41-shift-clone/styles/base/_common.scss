@@ -1,0 +1,18 @@
+.title {
+  font-size: 4.5rem;
+  font-weight: $fw-400;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 3.5rem;
+  }
+}
+.sub-title {
+  font-size: 1.3rem;
+  font-weight: $fw-700;
+  letter-spacing: 3px;
+  margin-bottom: 1.8rem;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 1rem;
+  }
+}
